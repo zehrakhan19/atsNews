@@ -1,7 +1,7 @@
 // import {useDispatch, useSelector} from 'react-redux';
 // import PubSub from 'pubsub-js';
 import Guest from './Guest';
-import MainNav from './main';
+import MainNav from './Main';
 // import {AUTH_EVENTS} from '../pub-sub/events';
 // import {userLogout} from '../features/user/userSlice';
 
