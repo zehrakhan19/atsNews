@@ -1,7 +1,7 @@
 // import {useDispatch, useSelector} from 'react-redux';
 // import PubSub from 'pubsub-js';
 import Guest from './Guest';
-// import MainNav from './main';
+import MainNav from './main';
 // import {AUTH_EVENTS} from '../pub-sub/events';
 // import {userLogout} from '../features/user/userSlice';
 
@@ -13,9 +13,9 @@ export default function RootNav() {
   //   dispatch(userLogout());
   // });
 
-  // if (false) {
-  //   return <MainNav />;
-  // }
+  if (true) {
+    return <MainNav />;
+  }
 
   return <Guest />;
 }

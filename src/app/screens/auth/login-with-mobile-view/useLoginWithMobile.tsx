@@ -1,5 +1,5 @@
-// import {toast} from '../../../../../libs/ats-native-components/src';
 import {useState} from 'react';
+// import {toast} from '../../../../../libs/ats-native-components/src';
 // import {useLoginWithMobileMutation} from '../../../services/auth/authApi';
 // import {useDispatch} from 'react-redux';
 // import {userMobileNumberEntered} from '../../../features/user/userSlice';
@@ -38,12 +38,13 @@ const useLoginWithMobile = ({navigation}) => {
   };
 
   return {
+    navigation,
     sendOtpDisable,
     mobileNumber,
     sendOTP,
     setMobileNumber,
     checkMobileNumberValidity,
-    isLoadingLogin,
+    // isLoadingLogin,
   };
 };
 

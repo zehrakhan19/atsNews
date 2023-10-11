@@ -9,6 +9,7 @@ import {
   Keyboard,
   Platform,
   Image,
+  TouchableOpacity,
 } from 'react-native';
 
 import React from 'react';
@@ -16,11 +17,12 @@ import {iOSUIKit, systemWeights, iOSColors} from 'react-native-typography';
 import {TouchableWithoutFeedback} from 'react-native-gesture-handler';
 
 function LoginWithMobileView({
+  navigation,
   sendOtpDisable,
   mobileNumber,
   sendOTP,
   checkMobileNumberValidity,
-  isLoadingLogin,
+  // isLoadingLogin,
 }) {
   return (
     <ScrollView style={{backgroundColor: '#fff'}}>
@@ -29,15 +31,18 @@ function LoginWithMobileView({
         <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
           <View>
             <View style={{alignItems: 'flex-end', padding: 20}}>
-              <Text
-                style={[
-                  iOSUIKit.subheadEmphasizedObject,
-                  systemWeights.bold,
-                  ,
-                  {color: iOSColors.gray},
-                ]}>
-                SKIP
-              </Text>
+              <TouchableOpacity
+                onPress={() => navigation.navigate('Home Screen')}>
+                <Text
+                  style={[
+                    iOSUIKit.subheadEmphasizedObject,
+                    systemWeights.bold,
+                    ,
+                    {color: iOSColors.gray},
+                  ]}>
+                  SKIP
+                </Text>
+              </TouchableOpacity>
             </View>
             <View
               style={{

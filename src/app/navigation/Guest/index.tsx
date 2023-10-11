@@ -8,6 +8,7 @@ import RequestAccessView from '../../screens/auth/request-access-to-manager/Requ
 import LoginWIthMobile from '../../screens/auth/login-with-mobile-view';
 import VerifyOtp from '../../screens/auth/user-otp';
 import LogoScreen from '../../screens/auth/logo-screen/LogoScreenView';
+import HomeScreen from '../../screens/user/home-screen';
 
 const Stack = createStackNavigator();
 
@@ -26,15 +27,20 @@ export default function Guest({navigation}: any) {
           component={LoginWIthMobile}
         />
         <Stack.Screen
+          name="Home Screen"
+          options={{headerShown: false}}
+          component={HomeScreen}
+        />
+        {/* <Stack.Screen
           name="Verfiy with OTP"
           options={{headerShown: false}}
           component={VerifyOtp}
-        />
-        <Stack.Screen
+        /> */}
+        {/* <Stack.Screen
           name="Request Access to Manager"
           options={{headerShown: false}}
           component={RequestAccessView}
-        />
+        /> */}
       </Stack.Navigator>
     </NavigationContainer>
   );

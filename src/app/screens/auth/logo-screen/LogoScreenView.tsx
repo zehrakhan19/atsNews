@@ -3,7 +3,7 @@ import React from 'react';
 import {Image} from 'react-native';
 import {View, Text, ScrollView} from 'react-native';
 
-function LogoScreenView({navigation}) {
+function LogoScreenView({navigation}: any) {
   const navigate = () => {
     navigation.navigate('Login with mobile number');
   };
