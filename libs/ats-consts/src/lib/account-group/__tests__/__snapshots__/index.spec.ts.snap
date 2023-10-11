@@ -1,0 +1,126 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ATS CONSTS for - account group Match consts to snapshot 1`] = `
+{
+  "BankAccounts": {
+    "groupName": "Bank Accounts",
+    "underGroup": "Current Assets",
+  },
+  "BankODLoans": {
+    "groupName": "Bank OD A/c",
+    "underGroup": "Loans(Liability)",
+  },
+  "BranchDivisions": {
+    "groupName": "Branch/Divisions",
+    "underGroup": "primary",
+  },
+  "CapitalAccount": {
+    "groupName": "Capital Account",
+    "underGroup": "primary",
+  },
+  "CashInHand": {
+    "groupName": "Cash-in-hand",
+    "underGroup": "Current Assets",
+  },
+  "CurrentAssets": {
+    "groupName": "Current Assets",
+    "underGroup": "primary",
+  },
+  "CurrentLiabilities": {
+    "groupName": "Current Liabilities",
+    "underGroup": "primary",
+  },
+  "DepositsAsset": {
+    "groupName": "Deposits(Asset)",
+    "underGroup": "Current Assets",
+  },
+  "DigitalAccounts": {
+    "groupName": "Digital Payment",
+    "underGroup": "Bank Accounts",
+  },
+  "DirectExpenses": {
+    "groupName": "Direct Expenses",
+    "underGroup": "primary",
+  },
+  "DirectIncomes": {
+    "groupName": "Direct Incomes",
+    "underGroup": "primary",
+  },
+  "DutiesTaxes": {
+    "groupName": "Duties & Taxes",
+    "underGroup": "Current Liabilities",
+  },
+  "FixedAssets": {
+    "groupName": "Fixed Assets",
+    "underGroup": "primary",
+  },
+  "IndirectExpenses": {
+    "groupName": "Indirect Expenses",
+    "underGroup": "primary",
+  },
+  "IndirectIncomes": {
+    "groupName": "Indirect Incomes",
+    "underGroup": "primary",
+  },
+  "Investment": {
+    "groupName": "Investment",
+    "underGroup": "primary",
+  },
+  "LoansAdvancesAsset": {
+    "groupName": "Loans & Advances(Asset)",
+    "underGroup": "Current Assets",
+  },
+  "LoansLiability": {
+    "groupName": "Loans(Liability)",
+    "underGroup": "primary",
+  },
+  "MiscExpensesASSET": {
+    "groupName": "Misc.Expenses(ASSET)",
+    "underGroup": "primary",
+  },
+  "Provisions": {
+    "groupName": "Provisions",
+    "underGroup": "Current Liabilities",
+  },
+  "PurchaseAccounts": {
+    "groupName": "Purchase Accounts",
+    "underGroup": "primary",
+  },
+  "ReservesSurplus": {
+    "groupName": "Reserves & Surplus",
+    "underGroup": "Capital Account",
+  },
+  "SalesAccounts": {
+    "groupName": "Sales Accounts",
+    "underGroup": "primary",
+  },
+  "SecuredLoans": {
+    "groupName": "Secured Loans",
+    "underGroup": "Loans(Liability)",
+  },
+  "StockInHand": {
+    "groupName": "Stock-in-hand",
+    "underGroup": "Current Assets",
+  },
+  "SundryCreditors": {
+    "groupName": "Sundry Creditors",
+    "underGroup": "Current Liabilities",
+  },
+  "SundryDebtors": {
+    "groupName": "Sundry Debtors",
+    "underGroup": "Current Assets",
+  },
+  "SuspenseAccounts": {
+    "groupName": "Suspense A/c",
+    "underGroup": "primary",
+  },
+  "UnsecuredLoans": {
+    "groupName": "Unsecured Loans",
+    "underGroup": "Loans(Liability)",
+  },
+  "primary": {
+    "groupName": "primary",
+    "underGroup": null,
+  },
+}
+`;

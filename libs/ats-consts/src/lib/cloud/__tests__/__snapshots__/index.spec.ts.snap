@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ATS CONSTS for - cloud Match consts to snapshot 1`] = `"ats.sgp1.cdn.digitaloceanspaces.com"`;

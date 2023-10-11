@@ -1,0 +1,108 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ATS CONSTS for - firebase Match consts to snapshot 1`] = `
+[
+  "SIMPLE",
+  "VARIABLE",
+]
+`;
+
+exports[`ATS CONSTS for - firebase Match consts to snapshot 2`] = `
+[
+  "SIMPLE",
+  "VARIABLE",
+]
+`;
+
+exports[`ATS CONSTS for - firebase Match consts to snapshot 3`] = `
+[
+  "IN",
+  "OUT",
+]
+`;
+
+exports[`ATS CONSTS for - firebase Match consts to snapshot 4`] = `
+[
+  "IN",
+  "OUT",
+]
+`;
+
+exports[`ATS CONSTS for - firebase Match consts to snapshot 5`] = `
+[
+  "FLAT",
+  "PERCENTAGE",
+]
+`;
+
+exports[`ATS CONSTS for - firebase Match consts to snapshot 6`] = `
+[
+  "PERCENTAGE",
+  "FLAT",
+]
+`;
+
+exports[`ATS CONSTS for - firebase Match consts to snapshot 7`] = `
+[
+  "OPENING_STOCK",
+  "PURCHASE",
+  "PURCHASE_RETURN",
+  "SALES",
+  "SALES_RETURN",
+  "STOCK_TRANSFER",
+]
+`;
+
+exports[`ATS CONSTS for - firebase Match consts to snapshot 8`] = `
+{
+  "OPENING_STOCK": "OPENING_STOCK",
+  "PURCHASE": "PURCHASE",
+  "PURCHASE_RETURN": "PURCHASE_RETURN",
+  "SALES": "SALES",
+  "SALES_RETURN": "SALES_RETURN",
+  "STOCK_TRANSFER": "STOCK_TRANSFER",
+}
+`;
+
+exports[`ATS CONSTS for - firebase Match consts to snapshot 9`] = `
+[
+  "OPENING_STOCK",
+  "SALES",
+  "PURCHASE",
+  "STOCK_TRANSFER",
+  "SALES_RETURN",
+  "PURCHASE_RETURN",
+]
+`;
+
+exports[`ATS CONSTS for - firebase Match consts to snapshot 10`] = `
+{
+  "SIMPLE": "SIMPLE",
+  "VARIABLE": "VARIABLE",
+}
+`;
+
+exports[`ATS CONSTS for - firebase Match consts to snapshot 11`] = `
+{
+  "IN": "IN",
+  "OUT": "OUT",
+}
+`;
+
+exports[`ATS CONSTS for - firebase Match consts to snapshot 12`] = `
+{
+  "FLAT": "FLAT",
+  "PERCENTAGE": "PERCENTAGE",
+}
+`;
+
+exports[`ATS CONSTS for - firebase Match consts to snapshot 13`] = `
+{
+  "OPENING_STOCK": "IN",
+  "PURCHASE": "IN",
+  "PURCHASE_RETURN": "OUT",
+  "SALES": "OUT",
+  "SALES_RETURN": "IN",
+  "STOCK_TRANSFER": "OUT",
+}
+`;

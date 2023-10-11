@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ATS CONSTS for - company types Match consts to snapshot 1`] = `
+[
+  "Private Limited Company",
+  "Limited Liability Partnership",
+  "Sole Proprietorship",
+  "Joint-Venture Company",
+  "Partnership Firm",
+]
+`;

@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ATS CONSTS for - account Match consts to snapshot 1`] = `"CASH"`;
+
+exports[`ATS CONSTS for - account Match consts to snapshot 2`] = `"Walk In Customer"`;
+
+exports[`ATS CONSTS for - account Match consts to snapshot 3`] = `
+[
+  "CUSTOMER",
+  "SUPPLIER",
+  "EMPLOYEE",
+  "CASH",
+  "BANK_ACCOUNT",
+]
+`;
+
+exports[`ATS CONSTS for - account Match consts to snapshot 4`] = `
+{
+  "BANK_ACCOUNT": "BANK_ACCOUNT",
+  "CASH": "CASH",
+  "CUSTOMER": "CUSTOMER",
+  "EMPLOYEE": "EMPLOYEE",
+  "SUPPLIER": "SUPPLIER",
+}
+`;
+
+exports[`ATS CONSTS for - account Match consts to snapshot 5`] = `
+{
+  "ADMIN": "ADMIN",
+  "CUSTOMER": "CUSTOMER",
+  "EMPLOYEE": "EMPLOYEE",
+  "SUPER_ADMIN": "SUPER_ADMIN",
+  "SUPPLIER": "SUPPLIER",
+}
+`;
+
+exports[`ATS CONSTS for - account Match consts to snapshot 6`] = `
+[
+  "SUPER_ADMIN",
+  "ADMIN",
+  "EMPLOYEE",
+  "CUSTOMER",
+  "SUPPLIER",
+]
+`;

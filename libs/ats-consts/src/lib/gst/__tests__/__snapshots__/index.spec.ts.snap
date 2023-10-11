@@ -1,0 +1,110 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ATS CONSTS for - gst Match consts to snapshot 1`] = `
+{
+  "0": "0",
+  "0.25": "0.25",
+  "12": "12",
+  "18": "18",
+  "28": "28",
+  "3": "3",
+  "5": "5",
+  "EXEMPTED": "EXEMPTED",
+  "NILL": "NILL",
+}
+`;
+
+exports[`ATS CONSTS for - gst Match consts to snapshot 2`] = `
+[
+  "0",
+  "12",
+  "18",
+  "28",
+  "5",
+  "EXEMPTED",
+  "NILL",
+]
+`;
+
+exports[`ATS CONSTS for - gst Match consts to snapshot 3`] = `
+[
+  "0",
+  "3",
+  "5",
+  "12",
+  "18",
+  "28",
+  "EXEMPTED",
+  "NILL",
+  "0.25",
+]
+`;
+
+exports[`ATS CONSTS for - gst Match consts to snapshot 4`] = `
+[
+  {
+    "label": "EXEMPTED",
+    "value": "EXEMPTED",
+  },
+  {
+    "label": "NILL",
+    "value": "NILL",
+  },
+  {
+    "label": "0%",
+    "value": "0",
+  },
+  {
+    "label": "0.25%",
+    "value": "0.25",
+  },
+  {
+    "label": "3%",
+    "value": "3",
+  },
+  {
+    "label": "5%",
+    "value": "5",
+  },
+  {
+    "label": "12%",
+    "value": "12",
+  },
+  {
+    "label": "18%",
+    "value": "18",
+  },
+  {
+    "label": "28%",
+    "value": "28",
+  },
+]
+`;
+
+exports[`ATS CONSTS for - gst Match consts to snapshot 5`] = `
+[
+  "INCLUSIVE",
+  "EXCLUSIVE",
+]
+`;
+
+exports[`ATS CONSTS for - gst Match consts to snapshot 6`] = `
+[
+  "EXCLUSIVE",
+  "INCLUSIVE",
+]
+`;
+
+exports[`ATS CONSTS for - gst Match consts to snapshot 7`] = `
+{
+  "INTER": "INTER",
+  "INTRA": "INTRA",
+}
+`;
+
+exports[`ATS CONSTS for - gst Match consts to snapshot 8`] = `
+[
+  "INTRA",
+  "INTER",
+]
+`;

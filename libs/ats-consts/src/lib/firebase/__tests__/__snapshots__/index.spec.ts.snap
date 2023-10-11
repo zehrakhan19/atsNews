@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ATS CONSTS for - firebase Match consts to snapshot 1`] = `"https://fcm.googleapis.com/fcm/send"`;

@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ATS CONSTS for - network Match consts to snapshot 1`] = `
+{
+  "ACTIVE": "Active",
+  "BLOCKED": "Blocked",
+  "PENDING": "Pending",
+  "SUSPENDED": "Suspended",
+}
+`;
+
+exports[`ATS CONSTS for - network Match consts to snapshot 2`] = `
+{
+  "data": {},
+  "message": "Success",
+  "success": true,
+}
+`;
+
+exports[`ATS CONSTS for - network Match consts to snapshot 3`] = `
+{
+  "message": "Error",
+  "success": true,
+}
+`;

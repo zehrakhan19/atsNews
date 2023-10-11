@@ -1,0 +1,107 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ATS CONSTS for - transactions Match consts to snapshot 1`] = `
+{
+  "CR": "CR",
+  "DR": "DR",
+}
+`;
+
+exports[`ATS CONSTS for - transactions Match consts to snapshot 2`] = `
+[
+  "CR",
+  "DR",
+]
+`;
+
+exports[`ATS CONSTS for - transactions Match consts to snapshot 3`] = `
+{
+  "DONE": "DONE",
+  "DUE": "DUE",
+  "PARTIAL": "PARTIAL",
+}
+`;
+
+exports[`ATS CONSTS for - transactions Match consts to snapshot 4`] = `
+[
+  "DUE",
+  "PARTIAL",
+  "DONE",
+]
+`;
+
+exports[`ATS CONSTS for - transactions Match consts to snapshot 5`] = `
+{
+  "BANK_TRANSFER": "BANK_TRANSFER",
+  "CARD": "CARD",
+  "CASH": "CASH",
+  "CHEQUE": "CHEQUE",
+}
+`;
+
+exports[`ATS CONSTS for - transactions Match consts to snapshot 6`] = `
+[
+  "CASH",
+  "CARD",
+  "CHEQUE",
+  "BANK_TRANSFER",
+]
+`;
+
+exports[`ATS CONSTS for - transactions Match consts to snapshot 7`] = `
+{
+  "CREDIT_NOTE": "CREDIT_NOTE",
+  "DEBIT_NOTE": "DEBIT_NOTE",
+  "JOURNAL": "JOURNAL",
+  "OPENING_BALANCE": "OPENING_BALANCE",
+  "PAYMENT": "PAYMENT",
+  "PURCHASE": "PURCHASE",
+  "PURCHASE_RETURN": "PURCHASE_RETURN",
+  "RECIPT": "RECIPT",
+  "SALES": "SALES",
+  "SALES_RETURN": "SALES_RETURN",
+}
+`;
+
+exports[`ATS CONSTS for - transactions Match consts to snapshot 8`] = `
+[
+  "PAYMENT",
+  "RECIPT",
+  "SALES",
+  "PURCHASE",
+  "SALES_RETURN",
+  "PURCHASE_RETURN",
+  "CREDIT_NOTE",
+  "DEBIT_NOTE",
+  "JOURNAL",
+  "OPENING_BALANCE",
+]
+`;
+
+exports[`ATS CONSTS for - transactions Match consts to snapshot 9`] = `
+{
+  "CAPITAL": "CAPITAL",
+  "INPUT": "INPUT",
+}
+`;
+
+exports[`ATS CONSTS for - transactions Match consts to snapshot 10`] = `
+[
+  "INPUT",
+  "CAPITAL",
+]
+`;
+
+exports[`ATS CONSTS for - transactions Match consts to snapshot 11`] = `
+{
+  "B2B": "B2B",
+  "B2C": "B2C",
+}
+`;
+
+exports[`ATS CONSTS for - transactions Match consts to snapshot 12`] = `
+[
+  "B2B",
+  "B2C",
+]
+`;

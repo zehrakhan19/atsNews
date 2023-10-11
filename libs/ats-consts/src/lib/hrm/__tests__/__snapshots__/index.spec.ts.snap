@@ -1,0 +1,8 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ATS CONSTS for - hrm Match consts to snapshot 1`] = `
+{
+  "CONTRACTOR": "CONTRACTOR",
+  "EMPLOYEE": "EMPLOYEE",
+}
+`;

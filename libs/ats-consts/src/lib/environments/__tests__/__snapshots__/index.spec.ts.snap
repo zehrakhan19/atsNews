@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ATS CONSTS for - environments Match consts to snapshot 1`] = `
+{
+  "DEVELOPMENT": "development",
+  "LOCAL": "local",
+  "PRODUCTION": "production",
+  "PROVISION": "provision",
+  "QA": "qa",
+  "TEST": "test",
+}
+`;

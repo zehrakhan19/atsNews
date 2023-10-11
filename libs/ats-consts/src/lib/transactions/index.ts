@@ -1,0 +1,59 @@
+export const TRANSACTIONS_TYPES_OBJ = {
+  CR: 'CR',
+  DR: 'DR'
+} as const;
+export type TTRANSACTIONS_TYPES = keyof typeof TRANSACTIONS_TYPES_OBJ;
+export const TRANSACTIONS_TYPES = Object.keys(TRANSACTIONS_TYPES_OBJ);
+
+export const TRANSACTIONS_STATUS_OBJ = {
+  DUE: 'DUE',
+  PARTIAL: 'PARTIAL',
+  DONE: 'DONE'
+} as const;
+export type TTRANSACTIONS_STATUS = keyof typeof TRANSACTIONS_STATUS_OBJ;
+export const TRANSACTIONS_STATUS = Object.keys(TRANSACTIONS_STATUS_OBJ);
+
+export const TRANSACTIONS_METHODS_OBJ = {
+  CASH: 'CASH',
+  CARD: 'CARD',
+  CHEQUE: 'CHEQUE',
+  BANK_TRANSFER: 'BANK_TRANSFER'
+} as const;
+export type TTRANSACTIONS_METHODS = keyof typeof TRANSACTIONS_METHODS_OBJ;
+export const TRANSACTIONS_METHODS = Object.keys(TRANSACTIONS_METHODS_OBJ);
+
+export const VOUCHER_TYPES_OBJ = {
+  PAYMENT: 'PAYMENT',
+  RECIPT: 'RECIPT',
+  SALES: 'SALES',
+  PURCHASE: 'PURCHASE',
+  SALES_RETURN: 'SALES_RETURN',
+  PURCHASE_RETURN: 'PURCHASE_RETURN',
+  CREDIT_NOTE: 'CREDIT_NOTE',
+  DEBIT_NOTE: 'DEBIT_NOTE',
+  JOURNAL: 'JOURNAL',
+  OPENING_BALANCE: 'OPENING_BALANCE'
+} as const;
+export type TVOUCHER_TYPES = keyof typeof VOUCHER_TYPES_OBJ;
+export const VOUCHER_TYPES = Object.keys(VOUCHER_TYPES_OBJ);
+
+// TODO: add test
+export const SUB_TRANSACTION_TYPE_OBJ = {
+  EXPENSE: 'EXPENSE'
+} as const;
+export type TSUB_TRANSACTION_TYPES = keyof typeof SUB_TRANSACTION_TYPE_OBJ;
+export const SUB_TRANSACTION_TYPES = Object.keys(SUB_TRANSACTION_TYPE_OBJ);
+
+export const PURCHASE_TYPE_OBJ = {
+  INPUT: 'INPUT',
+  CAPITAL: 'CAPITAL'
+} as const;
+export type TPURCHASE_TYPE = keyof typeof PURCHASE_TYPE_OBJ;
+export const PURCHASE_TYPES = Object.keys(PURCHASE_TYPE_OBJ);
+
+export const INVOICE_TYPE_OBJ = {
+  B2B: 'B2B',
+  B2C: 'B2C'
+} as const;
+export type TINVOICE_TYPE = keyof typeof INVOICE_TYPE_OBJ;
+export const INVOICE_TYPES = Object.keys(INVOICE_TYPE_OBJ);

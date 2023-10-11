@@ -1,0 +1,767 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ATS CONSTS for - permissions Match consts to snapshot 1`] = `[Function]`;
+
+exports[`ATS CONSTS for - permissions Match consts to snapshot 2`] = `
+{
+  "CREATE": "CREATE-test",
+  "DELETE": "DELETE-test",
+  "READ": "READ-test",
+  "UPDATE": "UPDATE-test",
+}
+`;
+
+exports[`ATS CONSTS for - permissions Match consts to snapshot 3`] = `
+{
+  "ACCOUNTS": {
+    "CREATE": "CREATE-ACCOUNTS",
+    "DELETE": "DELETE-ACCOUNTS",
+    "READ": "READ-ACCOUNTS",
+    "UPDATE": "UPDATE-ACCOUNTS",
+  },
+  "BANK_ACCOUNT": {
+    "CREATE": "CREATE-BANK_ACCOUNT",
+    "DELETE": "DELETE-BANK_ACCOUNT",
+    "READ": "READ-BANK_ACCOUNT",
+    "UPDATE": "UPDATE-BANK_ACCOUNT",
+  },
+  "BRANCH": {
+    "CREATE": "CREATE-BRANCH",
+    "DELETE": "DELETE-BRANCH",
+    "READ": "READ-BRANCH",
+    "UPDATE": "UPDATE-BRANCH",
+  },
+  "BRANDS": {
+    "CREATE": "CREATE-BRANDS",
+    "DELETE": "DELETE-BRANDS",
+    "READ": "READ-BRANDS",
+    "UPDATE": "UPDATE-BRANDS",
+  },
+  "CASH_ACCOUNT": {
+    "CREATE": "CREATE-CASH_ACCOUNT",
+    "DELETE": "DELETE-CASH_ACCOUNT",
+    "READ": "READ-CASH_ACCOUNT",
+    "UPDATE": "UPDATE-CASH_ACCOUNT",
+  },
+  "CATEGORIES": {
+    "CREATE": "CREATE-CATEGORIES",
+    "DELETE": "DELETE-CATEGORIES",
+    "READ": "READ-CATEGORIES",
+    "UPDATE": "UPDATE-CATEGORIES",
+  },
+  "COMPANY": {
+    "CREATE": "CREATE-COMPANY",
+    "DELETE": "DELETE-COMPANY",
+    "READ": "READ-COMPANY",
+    "UPDATE": "UPDATE-COMPANY",
+  },
+  "CUSTOMER": {
+    "CREATE": "CREATE-CUSTOMER",
+    "DELETE": "DELETE-CUSTOMER",
+    "READ": "READ-CUSTOMER",
+    "UPDATE": "UPDATE-CUSTOMER",
+  },
+  "DEPARTMENT": {
+    "CREATE": "CREATE-DEPARTMENT",
+    "DELETE": "DELETE-DEPARTMENT",
+    "READ": "READ-DEPARTMENT",
+    "UPDATE": "UPDATE-DEPARTMENT",
+  },
+  "EMPLOYEE": {
+    "CREATE": "CREATE-EMPLOYEE",
+    "DELETE": "DELETE-EMPLOYEE",
+    "READ": "READ-EMPLOYEE",
+    "UPDATE": "UPDATE-EMPLOYEE",
+  },
+  "EXPENSES": {
+    "CREATE": "CREATE-EXPENSES",
+    "DELETE": "DELETE-EXPENSES",
+    "READ": "READ-EXPENSES",
+    "UPDATE": "UPDATE-EXPENSES",
+  },
+  "EXTERNAL_SERVICE": {
+    "GST_VERIFICATION": "GST_VERIFICATION-EXTERNAL_SERVICE",
+  },
+  "ITEMS": {
+    "CREATE": "CREATE-ITEMS",
+    "DELETE": "DELETE-ITEMS",
+    "READ": "READ-ITEMS",
+    "UPDATE": "UPDATE-ITEMS",
+  },
+  "ITEM_METADATA": {
+    "CREATE": "CREATE-ITEM_METADATA",
+    "DELETE": "DELETE-ITEM_METADATA",
+    "READ": "READ-ITEM_METADATA",
+    "UPDATE": "UPDATE-ITEM_METADATA",
+  },
+  "PAYMENTS": {
+    "CREATE": "CREATE-PAYMENTS",
+    "DELETE": "DELETE-PAYMENTS",
+    "READ": "READ-PAYMENTS",
+    "UPDATE": "UPDATE-PAYMENTS",
+  },
+  "PLAN": {
+    "CREATE": "CREATE-PLAN",
+    "DELETE": "DELETE-PLAN",
+    "READ": "READ-PLAN",
+    "UPDATE": "UPDATE-PLAN",
+  },
+  "PURCHASE": {
+    "CREATE": "CREATE-PURCHASE",
+    "DELETE": "DELETE-PURCHASE",
+    "READ": "READ-PURCHASE",
+    "UPDATE": "UPDATE-PURCHASE",
+  },
+  "PURCHASE_RETURN": {
+    "CREATE": "CREATE-PURCHASE_RETURN",
+    "DELETE": "DELETE-PURCHASE_RETURN",
+    "READ": "READ-PURCHASE_RETURN",
+    "UPDATE": "UPDATE-PURCHASE_RETURN",
+  },
+  "RECIPTS": {
+    "CREATE": "CREATE-RECIPTS",
+    "DELETE": "DELETE-RECIPTS",
+    "READ": "READ-RECIPTS",
+    "UPDATE": "UPDATE-RECIPTS",
+  },
+  "REPORTS": {
+    "DASHBOARD": "DASHBOARD-REPORTS",
+    "DAY_BOOK": "DAY_BOOK-REPORTS",
+    "RECENT_ACTIVITY": "RECENT_ACTIVITY-REPORTS",
+  },
+  "SALES": {
+    "CREATE": "CREATE-SALES",
+    "DELETE": "DELETE-SALES",
+    "READ": "READ-SALES",
+    "UPDATE": "UPDATE-SALES",
+  },
+  "SALES_RETURN": {
+    "CREATE": "CREATE-SALES_RETURN",
+    "DELETE": "DELETE-SALES_RETURN",
+    "READ": "READ-SALES_RETURN",
+    "UPDATE": "UPDATE-SALES_RETURN",
+  },
+  "STOCKS": {
+    "CREATE": "CREATE-STOCKS",
+    "DELETE": "DELETE-STOCKS",
+    "READ": "READ-STOCKS",
+    "UPDATE": "UPDATE-STOCKS",
+  },
+  "SUPPLIER": {
+    "CREATE": "CREATE-SUPPLIER",
+    "DELETE": "DELETE-SUPPLIER",
+    "READ": "READ-SUPPLIER",
+    "UPDATE": "UPDATE-SUPPLIER",
+  },
+  "USERS": {
+    "CREATE": "CREATE-USERS",
+    "DELETE": "DELETE-USERS",
+    "READ": "READ-USERS",
+    "UPDATE": "UPDATE-USERS",
+  },
+}
+`;
+
+exports[`ATS CONSTS for - permissions Match consts to snapshot 4`] = `
+{
+  "ACCOUNTS": {
+    "CREATE": "CREATE-ACCOUNTS",
+    "DELETE": "DELETE-ACCOUNTS",
+    "READ": "READ-ACCOUNTS",
+    "UPDATE": "UPDATE-ACCOUNTS",
+  },
+  "BANK_ACCOUNT": {
+    "CREATE": "CREATE-BANK_ACCOUNT",
+    "DELETE": "DELETE-BANK_ACCOUNT",
+    "READ": "READ-BANK_ACCOUNT",
+    "UPDATE": "UPDATE-BANK_ACCOUNT",
+  },
+  "BRANCH": {
+    "CREATE": "CREATE-BRANCH",
+    "DELETE": "DELETE-BRANCH",
+    "READ": "READ-BRANCH",
+    "UPDATE": "UPDATE-BRANCH",
+  },
+  "BRANDS": {
+    "CREATE": "CREATE-BRANDS",
+    "DELETE": "DELETE-BRANDS",
+    "READ": "READ-BRANDS",
+    "UPDATE": "UPDATE-BRANDS",
+  },
+  "CASH_ACCOUNT": {
+    "CREATE": "CREATE-CASH_ACCOUNT",
+    "DELETE": "DELETE-CASH_ACCOUNT",
+    "READ": "READ-CASH_ACCOUNT",
+    "UPDATE": "UPDATE-CASH_ACCOUNT",
+  },
+  "CATEGORIES": {
+    "CREATE": "CREATE-CATEGORIES",
+    "DELETE": "DELETE-CATEGORIES",
+    "READ": "READ-CATEGORIES",
+    "UPDATE": "UPDATE-CATEGORIES",
+  },
+  "COMPANY": {
+    "CREATE": false,
+    "DELETE": false,
+    "READ": "READ-COMPANY",
+    "UPDATE": "UPDATE-COMPANY",
+  },
+  "CUSTOMER": {
+    "CREATE": "CREATE-CUSTOMER",
+    "DELETE": "DELETE-CUSTOMER",
+    "READ": "READ-CUSTOMER",
+    "UPDATE": "UPDATE-CUSTOMER",
+  },
+  "DEPARTMENT": {
+    "CREATE": "CREATE-DEPARTMENT",
+    "DELETE": "DELETE-DEPARTMENT",
+    "READ": "READ-DEPARTMENT",
+    "UPDATE": "UPDATE-DEPARTMENT",
+  },
+  "EMPLOYEE": {
+    "CREATE": "CREATE-EMPLOYEE",
+    "DELETE": "DELETE-EMPLOYEE",
+    "READ": "READ-EMPLOYEE",
+    "UPDATE": "UPDATE-EMPLOYEE",
+  },
+  "EXPENSES": {
+    "CREATE": "CREATE-EXPENSES",
+    "DELETE": "DELETE-EXPENSES",
+    "READ": "READ-EXPENSES",
+    "UPDATE": "UPDATE-EXPENSES",
+  },
+  "EXTERNAL_SERVICE": {
+    "GST_VERIFICATION": "GST_VERIFICATION-EXTERNAL_SERVICE",
+  },
+  "ITEMS": {
+    "CREATE": "CREATE-ITEMS",
+    "DELETE": "DELETE-ITEMS",
+    "READ": "READ-ITEMS",
+    "UPDATE": "UPDATE-ITEMS",
+  },
+  "ITEM_METADATA": {
+    "CREATE": "CREATE-ITEM_METADATA",
+    "DELETE": "DELETE-ITEM_METADATA",
+    "READ": "READ-ITEM_METADATA",
+    "UPDATE": "UPDATE-ITEM_METADATA",
+  },
+  "PAYMENTS": {
+    "CREATE": "CREATE-PAYMENTS",
+    "DELETE": "DELETE-PAYMENTS",
+    "READ": "READ-PAYMENTS",
+    "UPDATE": "UPDATE-PAYMENTS",
+  },
+  "PLAN": {
+    "CREATE": false,
+    "DELETE": false,
+    "READ": false,
+    "UPDATE": false,
+  },
+  "PURCHASE": {
+    "CREATE": "CREATE-PURCHASE",
+    "DELETE": "DELETE-PURCHASE",
+    "READ": "READ-PURCHASE",
+    "UPDATE": "UPDATE-PURCHASE",
+  },
+  "PURCHASE_RETURN": {
+    "CREATE": "CREATE-PURCHASE_RETURN",
+    "DELETE": "DELETE-PURCHASE_RETURN",
+    "READ": "READ-PURCHASE_RETURN",
+    "UPDATE": "UPDATE-PURCHASE_RETURN",
+  },
+  "RECIPTS": {
+    "CREATE": "CREATE-RECIPTS",
+    "DELETE": "DELETE-RECIPTS",
+    "READ": "READ-RECIPTS",
+    "UPDATE": "UPDATE-RECIPTS",
+  },
+  "REPORTS": {
+    "DASHBOARD": "DASHBOARD-REPORTS",
+    "DAY_BOOK": "DAY_BOOK-REPORTS",
+    "RECENT_ACTIVITY": "RECENT_ACTIVITY-REPORTS",
+  },
+  "SALES": {
+    "CREATE": "CREATE-SALES",
+    "DELETE": "DELETE-SALES",
+    "READ": "READ-SALES",
+    "UPDATE": "UPDATE-SALES",
+  },
+  "SALES_RETURN": {
+    "CREATE": "CREATE-SALES_RETURN",
+    "DELETE": "DELETE-SALES_RETURN",
+    "READ": "READ-SALES_RETURN",
+    "UPDATE": "UPDATE-SALES_RETURN",
+  },
+  "STOCKS": {
+    "CREATE": "CREATE-STOCKS",
+    "DELETE": "DELETE-STOCKS",
+    "READ": "READ-STOCKS",
+    "UPDATE": "UPDATE-STOCKS",
+  },
+  "SUPPLIER": {
+    "CREATE": "CREATE-SUPPLIER",
+    "DELETE": "DELETE-SUPPLIER",
+    "READ": "READ-SUPPLIER",
+    "UPDATE": "UPDATE-SUPPLIER",
+  },
+  "USERS": {
+    "CREATE": "CREATE-USERS",
+    "DELETE": "DELETE-USERS",
+    "READ": "READ-USERS",
+    "UPDATE": "UPDATE-USERS",
+  },
+}
+`;
+
+exports[`ATS CONSTS for - permissions Match consts to snapshot 5`] = `
+{
+  "ACCOUNTS": {
+    "CREATE": false,
+    "DELETE": false,
+    "READ": "READ-ACCOUNTS",
+    "UPDATE": false,
+  },
+  "BANK_ACCOUNT": {
+    "CREATE": false,
+    "DELETE": false,
+    "READ": "READ-BANK_ACCOUNT",
+    "UPDATE": false,
+  },
+  "BRANCH": {
+    "CREATE": false,
+    "DELETE": false,
+    "READ": "READ-BRANCH",
+    "UPDATE": false,
+  },
+  "BRANDS": {
+    "CREATE": false,
+    "DELETE": false,
+    "READ": "READ-BRANDS",
+    "UPDATE": false,
+  },
+  "CASH_ACCOUNT": {
+    "CREATE": false,
+    "DELETE": false,
+    "READ": "READ-CASH_ACCOUNT",
+    "UPDATE": false,
+  },
+  "CATEGORIES": {
+    "CREATE": false,
+    "DELETE": false,
+    "READ": "READ-CATEGORIES",
+    "UPDATE": false,
+  },
+  "COMPANY": {
+    "CREATE": false,
+    "DELETE": false,
+    "READ": "READ-COMPANY",
+    "UPDATE": "UPDATE-COMPANY",
+  },
+  "CUSTOMER": {
+    "CREATE": "CREATE-CUSTOMER",
+    "DELETE": false,
+    "READ": "READ-CUSTOMER",
+    "UPDATE": "UPDATE-CUSTOMER",
+  },
+  "DEPARTMENT": {
+    "CREATE": false,
+    "DELETE": false,
+    "READ": false,
+    "UPDATE": false,
+  },
+  "EMPLOYEE": {
+    "CREATE": false,
+    "DELETE": false,
+    "READ": "READ-EMPLOYEE",
+    "UPDATE": false,
+  },
+  "EXPENSES": {
+    "CREATE": "CREATE-EXPENSES",
+    "DELETE": "DELETE-EXPENSES",
+    "READ": "READ-EXPENSES",
+    "UPDATE": "UPDATE-EXPENSES",
+  },
+  "EXTERNAL_SERVICE": {
+    "GST_VERIFICATION": "GST_VERIFICATION-EXTERNAL_SERVICE",
+  },
+  "ITEMS": {
+    "CREATE": false,
+    "DELETE": false,
+    "READ": "READ-ITEMS",
+    "UPDATE": false,
+  },
+  "ITEM_METADATA": {
+    "CREATE": false,
+    "DELETE": false,
+    "READ": "READ-ITEM_METADATA",
+    "UPDATE": false,
+  },
+  "PAYMENTS": {
+    "CREATE": "CREATE-PAYMENTS",
+    "DELETE": "DELETE-PAYMENTS",
+    "READ": "READ-PAYMENTS",
+    "UPDATE": "UPDATE-PAYMENTS",
+  },
+  "PLAN": {
+    "CREATE": false,
+    "DELETE": false,
+    "READ": false,
+    "UPDATE": false,
+  },
+  "PURCHASE": {
+    "CREATE": false,
+    "DELETE": false,
+    "READ": false,
+    "UPDATE": false,
+  },
+  "PURCHASE_RETURN": {
+    "CREATE": false,
+    "DELETE": false,
+    "READ": false,
+    "UPDATE": false,
+  },
+  "RECIPTS": {
+    "CREATE": "CREATE-RECIPTS",
+    "DELETE": "DELETE-RECIPTS",
+    "READ": "READ-RECIPTS",
+    "UPDATE": "UPDATE-RECIPTS",
+  },
+  "REPORTS": {
+    "DASHBOARD": "DASHBOARD-REPORTS",
+    "DAY_BOOK": "DAY_BOOK-REPORTS",
+    "RECENT_ACTIVITY": "RECENT_ACTIVITY-REPORTS",
+  },
+  "SALES": {
+    "CREATE": "CREATE-SALES",
+    "DELETE": "DELETE-SALES",
+    "READ": "READ-SALES",
+    "UPDATE": "UPDATE-SALES",
+  },
+  "SALES_RETURN": {
+    "CREATE": "CREATE-SALES_RETURN",
+    "DELETE": "DELETE-SALES_RETURN",
+    "READ": "READ-SALES_RETURN",
+    "UPDATE": "UPDATE-SALES_RETURN",
+  },
+  "STOCKS": {
+    "CREATE": "CREATE-STOCKS",
+    "DELETE": "DELETE-STOCKS",
+    "READ": "READ-STOCKS",
+    "UPDATE": "UPDATE-STOCKS",
+  },
+  "SUPPLIER": {
+    "CREATE": "CREATE-SUPPLIER",
+    "DELETE": false,
+    "READ": "READ-SUPPLIER",
+    "UPDATE": "UPDATE-SUPPLIER",
+  },
+  "USERS": {
+    "CREATE": "CREATE-USERS",
+    "DELETE": false,
+    "READ": "READ-USERS",
+    "UPDATE": "UPDATE-USERS",
+  },
+}
+`;
+
+exports[`ATS CONSTS for - permissions Match consts to snapshot 6`] = `
+{
+  "ACCOUNTS": {
+    "CREATE": false,
+    "DELETE": false,
+    "READ": "READ-ACCOUNTS",
+    "UPDATE": false,
+  },
+  "BANK_ACCOUNT": {
+    "CREATE": false,
+    "DELETE": false,
+    "READ": "READ-BANK_ACCOUNT",
+    "UPDATE": false,
+  },
+  "BRANCH": {
+    "CREATE": false,
+    "DELETE": false,
+    "READ": "READ-BRANCH",
+    "UPDATE": false,
+  },
+  "BRANDS": {
+    "CREATE": false,
+    "DELETE": false,
+    "READ": "READ-BRANDS",
+    "UPDATE": false,
+  },
+  "CASH_ACCOUNT": {
+    "CREATE": false,
+    "DELETE": false,
+    "READ": "READ-CASH_ACCOUNT",
+    "UPDATE": false,
+  },
+  "CATEGORIES": {
+    "CREATE": false,
+    "DELETE": false,
+    "READ": "READ-CATEGORIES",
+    "UPDATE": false,
+  },
+  "COMPANY": {
+    "CREATE": false,
+    "DELETE": false,
+    "READ": "READ-COMPANY",
+    "UPDATE": false,
+  },
+  "CUSTOMER": {
+    "CREATE": false,
+    "DELETE": false,
+    "READ": "READ-CUSTOMER",
+    "UPDATE": "UPDATE-CUSTOMER",
+  },
+  "DEPARTMENT": {
+    "CREATE": false,
+    "DELETE": false,
+    "READ": false,
+    "UPDATE": false,
+  },
+  "EMPLOYEE": {
+    "CREATE": false,
+    "DELETE": false,
+    "READ": "READ-EMPLOYEE",
+    "UPDATE": false,
+  },
+  "EXPENSES": {
+    "CREATE": false,
+    "DELETE": false,
+    "READ": "READ-EXPENSES",
+    "UPDATE": false,
+  },
+  "EXTERNAL_SERVICE": {
+    "GST_VERIFICATION": "GST_VERIFICATION-EXTERNAL_SERVICE",
+  },
+  "ITEMS": {
+    "CREATE": false,
+    "DELETE": false,
+    "READ": "READ-ITEMS",
+    "UPDATE": false,
+  },
+  "ITEM_METADATA": {
+    "CREATE": false,
+    "DELETE": false,
+    "READ": "READ-ITEM_METADATA",
+    "UPDATE": false,
+  },
+  "PAYMENTS": {
+    "CREATE": "CREATE-PAYMENTS",
+    "DELETE": "DELETE-PAYMENTS",
+    "READ": "READ-PAYMENTS",
+    "UPDATE": "UPDATE-PAYMENTS",
+  },
+  "PLAN": {
+    "CREATE": false,
+    "DELETE": false,
+    "READ": false,
+    "UPDATE": false,
+  },
+  "PURCHASE": {
+    "CREATE": false,
+    "DELETE": false,
+    "READ": "READ-PURCHASE",
+    "UPDATE": false,
+  },
+  "PURCHASE_RETURN": {
+    "CREATE": false,
+    "DELETE": false,
+    "READ": "READ-PURCHASE_RETURN",
+    "UPDATE": false,
+  },
+  "RECIPTS": {
+    "CREATE": "CREATE-RECIPTS",
+    "DELETE": "DELETE-RECIPTS",
+    "READ": "READ-RECIPTS",
+    "UPDATE": "UPDATE-RECIPTS",
+  },
+  "REPORTS": {
+    "DASHBOARD": false,
+    "DAY_BOOK": false,
+    "RECENT_ACTIVITY": false,
+  },
+  "SALES": {
+    "CREATE": "CREATE-SALES",
+    "DELETE": "DELETE-SALES",
+    "READ": "READ-SALES",
+    "UPDATE": "UPDATE-SALES",
+  },
+  "SALES_RETURN": {
+    "CREATE": "CREATE-SALES_RETURN",
+    "DELETE": "DELETE-SALES_RETURN",
+    "READ": "READ-SALES_RETURN",
+    "UPDATE": "UPDATE-SALES_RETURN",
+  },
+  "STOCKS": {
+    "CREATE": false,
+    "DELETE": false,
+    "READ": "READ-STOCKS",
+    "UPDATE": false,
+  },
+  "SUPPLIER": {
+    "CREATE": false,
+    "DELETE": false,
+    "READ": "READ-SUPPLIER",
+    "UPDATE": "UPDATE-SUPPLIER",
+  },
+  "USERS": {
+    "CREATE": false,
+    "DELETE": false,
+    "READ": "READ-USERS",
+    "UPDATE": "UPDATE-USERS",
+  },
+}
+`;
+
+exports[`ATS CONSTS for - permissions Match consts to snapshot 7`] = `
+{
+  "ACCOUNTS": {
+    "CREATE": false,
+    "DELETE": false,
+    "READ": "READ-ACCOUNTS",
+    "UPDATE": false,
+  },
+  "BANK_ACCOUNT": {
+    "CREATE": false,
+    "DELETE": false,
+    "READ": "READ-BANK_ACCOUNT",
+    "UPDATE": false,
+  },
+  "BRANCH": {
+    "CREATE": false,
+    "DELETE": false,
+    "READ": "READ-BRANCH",
+    "UPDATE": false,
+  },
+  "BRANDS": {
+    "CREATE": false,
+    "DELETE": false,
+    "READ": "READ-BRANDS",
+    "UPDATE": false,
+  },
+  "CASH_ACCOUNT": {
+    "CREATE": false,
+    "DELETE": false,
+    "READ": "READ-CASH_ACCOUNT",
+    "UPDATE": false,
+  },
+  "CATEGORIES": {
+    "CREATE": false,
+    "DELETE": false,
+    "READ": "READ-CATEGORIES",
+    "UPDATE": false,
+  },
+  "COMPANY": {
+    "CREATE": false,
+    "DELETE": false,
+    "READ": "READ-COMPANY",
+    "UPDATE": false,
+  },
+  "CUSTOMER": {
+    "CREATE": false,
+    "DELETE": false,
+    "READ": "READ-CUSTOMER",
+    "UPDATE": "UPDATE-CUSTOMER",
+  },
+  "DEPARTMENT": {
+    "CREATE": false,
+    "DELETE": false,
+    "READ": false,
+    "UPDATE": false,
+  },
+  "EMPLOYEE": {
+    "CREATE": false,
+    "DELETE": false,
+    "READ": "READ-EMPLOYEE",
+    "UPDATE": false,
+  },
+  "EXPENSES": {
+    "CREATE": false,
+    "DELETE": false,
+    "READ": "READ-EXPENSES",
+    "UPDATE": false,
+  },
+  "EXTERNAL_SERVICE": {
+    "GST_VERIFICATION": "GST_VERIFICATION-EXTERNAL_SERVICE",
+  },
+  "ITEMS": {
+    "CREATE": false,
+    "DELETE": false,
+    "READ": "READ-ITEMS",
+    "UPDATE": false,
+  },
+  "ITEM_METADATA": {
+    "CREATE": false,
+    "DELETE": false,
+    "READ": "READ-ITEM_METADATA",
+    "UPDATE": false,
+  },
+  "PAYMENTS": {
+    "CREATE": "CREATE-PAYMENTS",
+    "DELETE": "DELETE-PAYMENTS",
+    "READ": "READ-PAYMENTS",
+    "UPDATE": "UPDATE-PAYMENTS",
+  },
+  "PLAN": {
+    "CREATE": false,
+    "DELETE": false,
+    "READ": false,
+    "UPDATE": false,
+  },
+  "PURCHASE": {
+    "CREATE": false,
+    "DELETE": false,
+    "READ": "READ-PURCHASE",
+    "UPDATE": false,
+  },
+  "PURCHASE_RETURN": {
+    "CREATE": false,
+    "DELETE": false,
+    "READ": "READ-PURCHASE_RETURN",
+    "UPDATE": false,
+  },
+  "RECIPTS": {
+    "CREATE": "CREATE-RECIPTS",
+    "DELETE": "DELETE-RECIPTS",
+    "READ": "READ-RECIPTS",
+    "UPDATE": "UPDATE-RECIPTS",
+  },
+  "REPORTS": {
+    "DASHBOARD": false,
+    "DAY_BOOK": false,
+    "RECENT_ACTIVITY": false,
+  },
+  "SALES": {
+    "CREATE": "CREATE-SALES",
+    "DELETE": "DELETE-SALES",
+    "READ": "READ-SALES",
+    "UPDATE": "UPDATE-SALES",
+  },
+  "SALES_RETURN": {
+    "CREATE": "CREATE-SALES_RETURN",
+    "DELETE": "DELETE-SALES_RETURN",
+    "READ": "READ-SALES_RETURN",
+    "UPDATE": "UPDATE-SALES_RETURN",
+  },
+  "STOCKS": {
+    "CREATE": false,
+    "DELETE": false,
+    "READ": "READ-STOCKS",
+    "UPDATE": false,
+  },
+  "SUPPLIER": {
+    "CREATE": false,
+    "DELETE": false,
+    "READ": "READ-SUPPLIER",
+    "UPDATE": "UPDATE-SUPPLIER",
+  },
+  "USERS": {
+    "CREATE": false,
+    "DELETE": false,
+    "READ": "READ-USERS",
+    "UPDATE": "UPDATE-USERS",
+  },
+}
+`;
