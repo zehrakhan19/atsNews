@@ -11,10 +11,9 @@ import {
 } from 'react-native';
 import PropTypes from 'prop-types';
 import {material} from 'react-native-typography';
-import {Divider} from 'react-native-paper';
 
-const SCREEN_HEIGHT = Dimensions.get('screen').height;
-const SCREEN_WIDTH = Dimensions.get('screen').width;
+const SCREEN_HEIGHT = Dimensions.get('window').height;
+const SCREEN_WIDTH = Dimensions.get('window').width;
 
 class Article extends Component {
   static propTypes: {article: PropTypes.Requireable<any[]>};
@@ -102,13 +101,12 @@ class Article extends Component {
                   />
                 </View>
                 <View style={styles.article}>
-                  <Text style={[material.title, {color: 'red'}]}>
+                  <Text style={[material.title, styles.subHeading]}>
                     {item?.serial}
                   </Text>
                   <Text style={[material.body1, {color: '#000'}]}>
                     {item?.news}
                   </Text>
-                  <Divider style={styles.divider} />
                 </View>
               </View>
             </Animated.View>
@@ -130,13 +128,12 @@ class Article extends Component {
                   />
                 </View>
                 <View style={styles.article}>
-                  <Text style={[material.title, {color: 'red'}]}>
+                  <Text style={[material.title, styles.subHeading]}>
                     {item?.serial}
                   </Text>
                   <Text style={[material.body1, {color: '#000'}]}>
                     {item?.news}
                   </Text>
-                  <Divider style={styles.divider} />
                 </View>
               </View>
             </Animated.View>
@@ -152,13 +149,12 @@ class Article extends Component {
                   />
                 </View>
                 <View style={styles.article}>
-                  <Text style={[material.title, {color: 'red'}]}>
+                  <Text style={[material.title, styles.subHeading]}>
                     {item?.serial}
                   </Text>
                   <Text style={[material.body1, {color: '#000'}]}>
                     {item?.news}
                   </Text>
-                  <Divider style={styles.divider} />
                 </View>
               </View>
             </Animated.View>
@@ -192,15 +188,8 @@ export const styles = StyleSheet.create({
   article: {
     flex: 3,
     padding: 10,
-    alignItems: 'center',
-    marginBottom: 40,
   },
-  divider: {
-    backgroundColor: '#000',
-    height: 1,
-    width: '100%',
-    marginVertical: 5,
-  },
+  subHeading: {color: 'red', alignSelf: 'center'},
 });
 
 export default Article;

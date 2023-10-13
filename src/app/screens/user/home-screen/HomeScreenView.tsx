@@ -8,6 +8,7 @@ import {styles} from './HomeScreen.styles';
 import {theme} from '../../../../config/theme';
 import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs';
 import Article from '../article/Article';
+import {Divider} from 'react-native-paper';
 
 const HomeScreenView = ({navigation}: any) => {
   const renderHomeScreenView = () => {
@@ -78,6 +79,7 @@ const HomeScreenView = ({navigation}: any) => {
     <>
       {/* {renderAppBar()} */}
       {renderHomeScreenView()}
+      <Divider />
     </>
   );
 };

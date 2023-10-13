@@ -32,7 +32,7 @@ function LoginWithMobileView({
           <View>
             <View style={{alignItems: 'flex-end', padding: 20}}>
               <TouchableOpacity
-                onPress={() => navigation.navigate('Home Screen')}>
+                onPress={() => navigation.navigate('home-screen')}>
                 <Text
                   style={[
                     iOSUIKit.subheadEmphasizedObject,
