@@ -3,9 +3,14 @@
 import React from 'react';
 import {theme} from '../../../../config/theme';
 import {createMaterialBottomTabNavigator} from '@react-navigation/material-bottom-tabs';
-import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
-import Customer from 'react-native-vector-icons/Feather';
 import HomeScreen from '../../../screens/user/home-screen';
+import ReporterDashboard from '../../../screens/user/reporter-dashboard';
+import DashboardIcon from 'react-native-vector-icons/MaterialCommunityIcons';
+import Customer from 'react-native-vector-icons/Feather';
+import HomeScreenIcon from 'react-native-vector-icons/Feather';
+import BasketIcon from 'react-native-vector-icons/Ionicons';
+import PostIcon from 'react-native-vector-icons/Ionicons';
+import MoreIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
 function BottomTabs() {
   const Tab = createMaterialBottomTabNavigator();
@@ -17,44 +22,42 @@ function BottomTabs() {
       activeColor={theme.colors.primary}
       barStyle={{backgroundColor: '#ffffff'}}>
       <Tab.Screen
-        name="DashbardTab"
+        name="home-screen"
         component={HomeScreen}
         options={{
-          tabBarLabel: 'Dashboard',
+          tabBarLabel: 'Home',
           tabBarIcon: ({color}) => (
-            <MaterialCommunityIcons
-              name={'monitor-dashboard'}
-              color={color}
-              size={26}
-            />
+            <HomeScreenIcon name={'home'} color={color} size={26} />
           ),
         }}
       />
       <Tab.Screen
+        name="DashbardTab"
+        component={ReporterDashboard}
+        options={{
+          tabBarLabel: 'Dashboard',
+          tabBarIcon: ({color}) => (
+            <DashboardIcon name={'monitor-dashboard'} color={color} size={26} />
+          ),
+        }}
+      />
+      {/* <Tab.Screen
         name=" Basket Tab"
         component={HomeScreen}
         options={{
           tabBarLabel: 'Basket',
           tabBarIcon: ({color}) => (
-            <MaterialCommunityIcons
-              name={'monitor-dashboard'}
-              color={color}
-              size={26}
-            />
+            <BasketIcon name={'basket-outline'} color={color} size={26} />
           ),
         }}
-      />
+      /> */}
       <Tab.Screen
         name=" Post Tab"
         component={HomeScreen}
         options={{
           tabBarLabel: 'Post',
           tabBarIcon: ({color}) => (
-            <MaterialCommunityIcons
-              name={'monitor-dashboard'}
-              color={color}
-              size={26}
-            />
+            <PostIcon name={'newspaper-outline'} color={color} size={26} />
           ),
         }}
       />
@@ -74,8 +77,8 @@ function BottomTabs() {
         options={{
           tabBarLabel: 'More',
           tabBarIcon: ({color}) => (
-            <MaterialCommunityIcons
-              name={'monitor-dashboard'}
+            <MoreIcons
+              name={'view-grid-plus-outline'}
               color={color}
               size={26}
             />

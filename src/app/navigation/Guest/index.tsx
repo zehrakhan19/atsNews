@@ -27,7 +27,7 @@ export default function Guest({navigation}: any) {
           component={LoginWIthMobile}
         />
         <Stack.Screen
-          name="Home Screen"
+          name="home-screen"
           options={{headerShown: false}}
           component={HomeScreen}
         />

@@ -23,7 +23,7 @@ const useOtpVerify = ({navigation}) => {
     //   console.log('verify cred', mobileNumber, otp);
     //   await verifyOtp({phone: mobileNumber, otp: otp}).then((res: any) => {
     //     dispatch(userLoginWithMobileNumber(res?.data));
-    //     navigation.navigate('DashbardTab');
+    //     navigation.navigate('home-screen');
     //   });
     // } catch (err) {
     //   console.log(err);
