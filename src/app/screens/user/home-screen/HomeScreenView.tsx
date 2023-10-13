@@ -18,33 +18,29 @@ const HomeScreenView = ({navigation}: any) => {
     {
       id: 0,
       url: require('../../../assets/article1.png'),
-      serial: 'FIRST ARTICLE',
+      topic: 'NATIONAL',
       news: `The definite article is the word the. It limits the meaning of a noun to one particular thing. For example, your friend might ask, “Are you going to the party this weekend?” 
-      The definite article tells you that your friend is referring to a specific party that both of you already know about. The definite article can be used with singular, plural, or uncountable nouns. 
       The definite article is the word the. It limits the meaning of a noun to one particular thing. For example, your friend might ask, “Are you going to the party this weekend?” The definite article tells you that your friend is referring to a specific party that both of you already know about. The definite article can be used with singular, plural, or uncountable nouns. The definite article is the word the.`,
     },
     {
       id: 1,
       url: require('../../../assets/article2.png'),
-      serial: 'SECOND ARTICLE',
+      topic: 'BUSINESS',
       news: `The definite article is the word the. It limits the meaning of a noun to one particular thing. For example, your friend might ask, “Are you going to the party this weekend?”
-      The definite article tells you that your friend is referring to a specific party that both of you already know about. The definite article can be used with singular, plural, or uncountable nouns. 
       The definite article is the word the. It limits the meaning of a noun to one particular thing. For example, your friend might ask, “Are you going to the party this weekend?” The definite article tells you that your friend is referring to a specific party that both of you already know about. The definite article can be used with singular, plural, or uncountable nouns. The definite article is the word the.`,
     },
     {
       id: 2,
       url: require('../../../assets/article3.png'),
-      serial: 'THIRD ARTICLE',
+      topic: 'SPORTS',
       news: `The definite article is the word the. It limits the meaning of a noun to one particular thing. For example, your friend might ask, “Are you going to the party this weekend?” 
-      The definite article tells you that your friend is referring to a specific party that both of you already know about. The definite article can be used with singular, plural, or uncountable nouns. 
       The definite article is the word the. It limits the meaning of a noun to one particular thing. For example, your friend might ask, “Are you going to the party this weekend?” The definite article tells you that your friend is referring to a specific party that both of you already know about. The definite article can be used with singular, plural, or uncountable nouns. The definite article is the word the.`,
     },
     {
       id: 3,
       url: require('../../../assets/article4.png'),
-      serial: 'FORTH ARTICLE',
+      topic: 'ENTERTAINMENT',
       news: `The definite article is the word the. It limits the meaning of a noun to one particular thing. For example, your friend might ask, “Are you going to the party this weekend?” 
-      The definite article tells you that your friend is referring to a specific party that both of you already know about. The definite article can be used with singular, plural, or uncountable nouns. 
       The definite article is the word the. It limits the meaning of a noun to one particular thing. For example, your friend might ask, “Are you going to the party this weekend?” The definite article tells you that your friend is referring to a specific party that both of you already know about. The definite article can be used with singular, plural, or uncountable nouns. The definite article is the word the.`,
     },
   ];

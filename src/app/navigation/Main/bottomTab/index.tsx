@@ -17,7 +17,7 @@ function BottomTabs() {
 
   return (
     <Tab.Navigator
-      initialRouteName="Dashboard"
+      initialRouteName="home-screen"
       shifting={false}
       activeColor={theme.colors.primary}
       barStyle={{backgroundColor: '#ffffff'}}>

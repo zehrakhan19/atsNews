@@ -1,5 +1,5 @@
 /* eslint-disable react-native/no-inline-styles */
-import React, {Component} from 'react';
+import React, {Component, useRef} from 'react';
 import {
   View,
   Text,
@@ -8,9 +8,16 @@ import {
   Animated,
   PanResponder,
   StyleSheet,
+  TouchableOpacity,
 } from 'react-native';
 import PropTypes from 'prop-types';
 import {material} from 'react-native-typography';
+import Share from 'react-native-share';
+import ViewShot from 'react-native-view-shot';
+import {Divider} from 'react-native-paper';
+import Icon from 'react-native-vector-icons/AntDesign';
+import CommentIcon from 'react-native-vector-icons/MaterialCommunityIcons';
+import ShareIcon from 'react-native-vector-icons/Feather';
 
 const SCREEN_HEIGHT = Dimensions.get('window').height;
 const SCREEN_WIDTH = Dimensions.get('window').width;
@@ -27,8 +34,22 @@ class Article extends Component {
     this.swipedCardPosition = new Animated.ValueXY({x: 0, y: -SCREEN_HEIGHT});
     this.state = {
       currentIndex: 0,
+      imageUri: '',
     };
   }
+  ref = React.createRef();
+  myCustomShare = async (message: any, uri: any) => {
+    const shareOptions = {
+      url: uri,
+      message: `This article is about ${message}.`,
+    };
+    try {
+      const shareResponse = await Share.open(shareOptions);
+    } catch (err) {
+      console.log('Error => ', err);
+    }
+  };
+
   componentWillMount() {
     this.PanResponder = PanResponder.create({
       onStartShouldSetPanResponder: (e, gestureState) => true,
@@ -102,7 +123,7 @@ class Article extends Component {
                 </View>
                 <View style={styles.article}>
                   <Text style={[material.title, styles.subHeading]}>
-                    {item?.serial}
+                    {item?.topic}
                   </Text>
                   <Text style={[material.body1, {color: '#000'}]}>
                     {item?.news}
@@ -120,22 +141,71 @@ class Article extends Component {
               key={item?.id}
               style={this.position.getLayout()}
               {...this.PanResponder.panHandlers}>
-              <View style={styles.mainContainer}>
-                <View style={{flex: 2, backgroundColor: '#000'}}>
-                  <Image
-                    source={this.props.article[i].url}
-                    style={styles.image}
-                  />
+              <ViewShot style={styles.mainContainer} ref={this.ref}>
+                <View style={styles.mainContainer}>
+                  <View style={{flex: 2, backgroundColor: '#000'}}>
+                    <Image
+                      source={this.props.article[i].url}
+                      style={styles.image}
+                    />
+                  </View>
+                  <View style={styles.article}>
+                    <View>
+                      <Text style={[material.title, styles.subHeading]}>
+                        {item?.topic}
+                      </Text>
+                      <Text style={[material.body1, {color: '#000'}]}>
+                        {item?.news}
+                      </Text>
+                    </View>
+                    <View style={{marginBottom: 120}}>
+                      <Text
+                        style={[material.body1, {color: 'gray', margin: 4}]}>
+                        5: 50 PM
+                      </Text>
+                      <Divider />
+                      <View style={styles.bottomTab}>
+                        <View style={styles.iconContainer}>
+                          <Icon name="like2" color={'gray'} size={24} />
+                          <Text style={[material.body1, {color: 'gray'}]}>
+                            30
+                          </Text>
+                        </View>
+                        <View style={styles.iconContainer}>
+                          <Icon name="dislike2" color={'gray'} size={24} />
+                          <Text style={[material.body1, {color: 'gray'}]}>
+                            30
+                          </Text>
+                        </View>
+                        <View style={styles.iconContainer}>
+                          <CommentIcon
+                            name="comment-multiple-outline"
+                            color={'gray'}
+                            size={24}
+                          />
+                          <Text style={[material.body1, {color: 'gray'}]}>
+                            30
+                          </Text>
+                        </View>
+                        <View style={styles.iconContainer}>
+                          <TouchableOpacity
+                            onPress={() => {
+                              this.ref.current.capture().then(uri => {
+                                this.myCustomShare(item?.topic, uri);
+                              });
+                            }}>
+                            <ShareIcon
+                              name="share-2"
+                              color={'gray'}
+                              size={24}
+                            />
+                          </TouchableOpacity>
+                        </View>
+                      </View>
+                    </View>
+                  </View>
                 </View>
-                <View style={styles.article}>
-                  <Text style={[material.title, styles.subHeading]}>
-                    {item?.serial}
-                  </Text>
-                  <Text style={[material.body1, {color: '#000'}]}>
-                    {item?.news}
-                  </Text>
-                </View>
-              </View>
+              </ViewShot>
             </Animated.View>
           );
         } else {
@@ -150,7 +220,7 @@ class Article extends Component {
                 </View>
                 <View style={styles.article}>
                   <Text style={[material.title, styles.subHeading]}>
-                    {item?.serial}
+                    {item?.topic}
                   </Text>
                   <Text style={[material.body1, {color: '#000'}]}>
                     {item?.news}
@@ -179,6 +249,12 @@ export const styles = StyleSheet.create({
     width: SCREEN_WIDTH,
     backgroundColor: '#fff',
   },
+  bottomTab: {
+    flexDirection: 'row',
+    gap: 16,
+    paddingVertical: 8,
+  },
+  iconContainer: {flexDirection: 'row', gap: 5},
   image: {
     flex: 1,
     height: null,
@@ -188,6 +264,7 @@ export const styles = StyleSheet.create({
   article: {
     flex: 3,
     padding: 10,
+    justifyContent: 'space-between',
   },
   subHeading: {color: 'red', alignSelf: 'center'},
 });

@@ -10,6 +10,7 @@ import {iOSUIKit} from 'react-native-typography';
 import {
   Appbar,
   DateAndTimePicker,
+  ImagePicker,
   InputText,
   SwitchButton,
 } from '../../../../../libs/ats-native-components/src';
@@ -80,6 +81,7 @@ const AddNewsView = ({
             label="Short Article"
             placeholder="i.e write short article"
             value=""
+            multiline
             onChangeText={text => {
               handleInputChange('shortArticle', text);
             }}
@@ -90,6 +92,7 @@ const AddNewsView = ({
             label="Write Article"
             placeholder="i.e write article"
             value=""
+            multiline
             onChangeText={text => {
               handleInputChange('writeArticle', text);
             }}
@@ -108,6 +111,7 @@ const AddNewsView = ({
             label="Meta Description"
             placeholder="Meta Description"
             value=""
+            multiline
             onChangeText={text => {
               handleInputChange('metaDescription', text);
             }}
