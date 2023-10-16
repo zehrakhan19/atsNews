@@ -1,4 +1,5 @@
 import {useState} from 'react';
+import {launchImageLibrary} from 'react-native-image-picker';
 
 const initialSate = {
   name: '',
@@ -10,6 +11,7 @@ const initialSate = {
   writeArticle: '',
   metaKeyword: '',
   metaDescription: '',
+  // image: '',
 };
 
 const categoriesData = [
@@ -33,7 +35,7 @@ const languagesData = [
   },
   {
     fullTitle: 'Hindi',
-    shortTitle: 'HIN',
+    shortTitle: 'HN',
   },
   {
     fullTitle: 'English',
@@ -46,8 +48,8 @@ const newsSpecialityData = [
     shortTitle: 'TN',
   },
   {
-    fullTitle: 'Avg News',
-    shortTitle: 'AN',
+    fullTitle: 'Slider News',
+    shortTitle: 'SN',
   },
 ];
 
@@ -80,6 +82,25 @@ const useAddNews = ({navigation}: any) => {
       [item]: value,
     }));
   };
+
+  const handleOpenLibrary = () => {
+    const options = {
+      storageOptions: {
+        path: 'image',
+      },
+    };
+
+    launchImageLibrary(options, response => {
+      if (response.assets[0].fileName !== undefined) {
+        // setImageUri(response.assets[0].uri);
+        setNews((prev: any) => ({
+          ...prev,
+          image: response.assets[0].fileName,
+        }));
+      }
+      // }
+    });
+  };
   return {
     navigation,
     toggleSwitch,
@@ -96,6 +117,8 @@ const useAddNews = ({navigation}: any) => {
     newsSpeciality,
     setNewsSpeciality,
     newsSpecialityData,
+    handleOpenLibrary,
+    news,
   };
 };
 

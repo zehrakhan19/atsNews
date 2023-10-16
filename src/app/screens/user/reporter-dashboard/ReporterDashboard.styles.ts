@@ -1,11 +1,12 @@
 import {StyleSheet} from 'react-native';
+import {theme} from '../../../../config/theme';
 
 export const styles = StyleSheet.create({
   text1: {
-    color: 'green',
+    color: theme.colors.green,
   },
   text2: {
-    color: 'red',
+    color: theme.colors.red,
   },
   heading: {
     color: 'black',
@@ -41,7 +42,7 @@ export const styles = StyleSheet.create({
     backgroundColor: 'white',
   },
   fab: {
-    backgroundColor: 'red',
+    backgroundColor: theme.colors.primary,
     position: 'absolute',
     margin: 16,
     right: 0,

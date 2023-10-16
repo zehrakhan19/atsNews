@@ -8,6 +8,7 @@ import {styles} from './ReporterDashboard.styles';
 import {Appbar, Card} from 'react-native-paper';
 import {iOSUIKit} from 'react-native-typography';
 import {Fab} from '../../../../../libs/ats-native-components/src';
+// import newspaper from 'react-native-vector-icons/Ionicons';
 
 const ReporterDashboardView = ({navigation, handleNavigateToAddNews}: any) => {
   return (
@@ -63,7 +64,7 @@ const ReporterDashboardView = ({navigation, handleNavigateToAddNews}: any) => {
         </View>
       </ScrollView>
       <Fab
-        icon="plus"
+        icon="file-plus"
         color="white"
         style={styles.fab}
         callback={() => {

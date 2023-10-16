@@ -11,12 +11,15 @@ import {
   ActionCard,
   Appbar,
   BottomSheet,
+  Button,
   DateAndTimePicker,
+  ImagePicker,
   InputText,
   SwitchButton,
 } from '../../../../../libs/ats-native-components/src';
 import Autocomplete from 'react-native-autocomplete-input';
 import {Card, List} from 'react-native-paper';
+import {theme} from '../../../../config/theme';
 
 const AddNewsView = ({
   navigation,
@@ -34,6 +37,8 @@ const AddNewsView = ({
   newsSpeciality,
   setNewsSpeciality,
   newsSpecialityData,
+  handleOpenLibrary,
+  news,
 }: any) => {
   return (
     <>
@@ -221,7 +226,7 @@ const AddNewsView = ({
             <ActionCard
               mainText={newsSpeciality.name}
               actionText={newsSpeciality.actionText}
-              color="#D80000"
+              color={theme.colors.primary}
               callback={() =>
                 setNewsSpeciality((prev: any) => ({...prev, bottomSheet: true}))
               }
@@ -241,7 +246,7 @@ const AddNewsView = ({
                 autoFocus={true}
                 style={{color: '#000'}}
                 placeholderTextColor={'#777'}
-                placeholder="Select Category"
+                placeholder="Select news speciality"
                 inputContainerStyle={{
                   margin: 10,
                   padding: 10,
@@ -282,12 +287,22 @@ const AddNewsView = ({
             </BottomSheet>
           </Card>
         </View>
+
+        <View>
+          <Text>Upload Image</Text>
+          <ActionCard
+            mainText={news?.image ? news?.image : 'Upload Image'}
+            callback={() => handleOpenLibrary()}
+          />
+        </View>
+
+        {/* <ImagePicker /> */}
+
         <Card style={{backgroundColor: 'white', padding: 1, margin: 10}}>
           <List.Item
             title="Breaking News"
             right={() => (
               <SwitchButton
-                color="#D80000"
                 value={breakingNews}
                 onValueChange={() => {
                   toggleSwitch();
@@ -351,6 +366,19 @@ const AddNewsView = ({
           />
         </Card>
       </ScrollView>
+      <View
+        style={{
+          paddingVertical: 20,
+          paddingHorizontal: 10,
+          backgroundColor: 'white',
+        }}>
+        <Button
+          mode="outlined"
+          label="Add News"
+          callback={() => null}
+          color={theme.colors.primary}
+        />
+      </View>
     </>
   );
 };
