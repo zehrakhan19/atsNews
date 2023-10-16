@@ -1,8 +1,8 @@
-import { Text, TouchableOpacity, View } from 'react-native';
-import { HelperText, TextInput } from 'react-native-paper';
-import { IconSource } from 'react-native-paper/lib/typescript/src/components/Icon';
-import { iOSColors, iOSUIKit, material } from 'react-native-typography';
-import { StyleSheet } from 'react-native';
+import {Text, TouchableOpacity, View} from 'react-native';
+import {HelperText, TextInput} from 'react-native-paper';
+import {IconSource} from 'react-native-paper/lib/typescript/src/components/Icon';
+import {iOSColors, iOSUIKit, material} from 'react-native-typography';
+import {StyleSheet} from 'react-native';
 
 export interface InputTextProps {
   placeholder?: string;
@@ -66,7 +66,7 @@ export function InputText({
   required = false,
   editable,
   customError,
-  helperText
+  helperText,
 }: InputTextProps) {
   return (
     <View>
@@ -76,30 +76,29 @@ export function InputText({
             style={[
               material.body1,
               iOSUIKit.subheadEmphasized,
-              { marginTop: 12 }
-            ]}
-          >
+              {paddingTop: 12, paddingBottom: 6},
+            ]}>
             {label}
-            {required && <Text style={{ color: 'red' }}> * </Text>}
+            {required && <Text style={{color: 'red'}}> * </Text>}
           </Text>
           {labelRight && (
             <TouchableOpacity onPress={labelRightPress}>
-              <Text style={{ color: 'red' }}>{labelRight}</Text>
+              <Text style={{color: 'red'}}>{labelRight}</Text>
             </TouchableOpacity>
           )}
         </View>
       )}
       <TextInput
-        mode='outlined'
+        mode="outlined"
         label={inFieldLabel ? label : undefined}
         style={[
           style,
           {
             backgroundColor: 'white',
-            height: small && 35
-          }
+            height: small && 35,
+          },
         ]}
-        outlineColor='lightgrey'
+        outlineColor="lightgrey"
         activeOutlineColor={iOSColors.gray}
         activeUnderlineColor={iOSColors.gray}
         placeholderTextColor={iOSColors.gray}
@@ -121,7 +120,7 @@ export function InputText({
           )
         }
         value={value}
-        onChangeText={(text) => onChangeText && onChangeText(text)}
+        onChangeText={text => onChangeText && onChangeText(text)}
         multiline={multiline || false}
         numberOfLines={4}
         placeholder={placeholder || ''}
@@ -134,7 +133,7 @@ export function InputText({
         onBlur={() => onBlur()}
       />
       {error && (
-        <HelperText type='error' style={{ color: '#a30000' }}>
+        <HelperText type="error" style={{color: '#a30000'}}>
           {customError ? customError : 'This Field is required'}
         </HelperText>
       )}
@@ -145,6 +144,6 @@ const styles = StyleSheet.create({
   labelContainer: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-    alignItems: 'baseline'
-  }
+    alignItems: 'baseline',
+  },
 });

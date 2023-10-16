@@ -18,34 +18,38 @@ const HomeScreenView = ({navigation}: any) => {
     {
       id: 0,
       url: require('../../../assets/article1.png'),
-      serial: 'FIRST ARTICLE',
-      news: `The definite article is the word the. It limits the meaning of a noun to one particular thing. For example, your friend might ask, “Are you going to the party this weekend?” 
-      The definite article tells you that your friend is referring to a specific party that both of you already know about. The definite article can be used with singular, plural, or uncountable nouns. 
-      The definite article is the word the. It limits the meaning of a noun to one particular thing. For example, your friend might ask, “Are you going to the party this weekend?” The definite article tells you that your friend is referring to a specific party that both of you already know about. The definite article can be used with singular, plural, or uncountable nouns. The definite article is the word the.`,
+      topic: 'NATIONAL',
+      heading: `చంద్రబాబు ఆరోగ్యంపై జైళ్ల శాఖ క్లారిటీ-బరువు వివాదంపైనా...
+      `,
+      content: `ఏపీలో స్కిల్ డెవలప్మెంట్ కేసులో అరెస్టు అయి రాజమండ్రి జైల్లో రిమాండ్ ఖైదీగా ఉంటున్న టీడీపీ అధినేత చంద్రబాబు ఆరోగ్యంపై నిన్నటి నుంచి మీడియాలో అనేక ఊహాగానాలు చక్కర్లు కొట్టాయి. ఈ మధ్య ఆయన్ను కలిసిన టీడీపీ నేతలు, కుటుంబ సభ్యులు చెబుతున్న మాటల్ని బట్టి చంద్రబాబు జైల్లో ఎండవేడిమి కారణంగా డీహైడ్రేషన్ కు గురైనట్లు, అనంతరం ఆయనకు స్కిన్ అలర్జీ కూడా సోకినట్లు ప్రచారం జరిగింది. దీంతో ఇవాళ చంద్రబాబు ఆరోగ్యంపై టీడీపీ నేతలు తీవ్ర ఆందోళన వ్యక్తం చేశారు
+      `,
     },
     {
       id: 1,
       url: require('../../../assets/article2.png'),
-      serial: 'SECOND ARTICLE',
-      news: `The definite article is the word the. It limits the meaning of a noun to one particular thing. For example, your friend might ask, “Are you going to the party this weekend?”
-      The definite article tells you that your friend is referring to a specific party that both of you already know about. The definite article can be used with singular, plural, or uncountable nouns. 
-      The definite article is the word the. It limits the meaning of a noun to one particular thing. For example, your friend might ask, “Are you going to the party this weekend?” The definite article tells you that your friend is referring to a specific party that both of you already know about. The definite article can be used with singular, plural, or uncountable nouns. The definite article is the word the.`,
+      topic: 'BUSINESS',
+      heading: `చంద్రబాబు ఆరోగ్యంపై జైళ్ల శాఖ క్లారిటీ-బరువు వివాదంపైనా...
+      `,
+      content: `ఏపీలో స్కిల్ డెవలప్మెంట్ కేసులో అరెస్టు అయి రాజమండ్రి జైల్లో రిమాండ్ ఖైదీగా ఉంటున్న టీడీపీ అధినేత చంద్రబాబు ఆరోగ్యంపై నిన్నటి నుంచి మీడియాలో అనేక ఊహాగానాలు చక్కర్లు కొట్టాయి. ఈ మధ్య ఆయన్ను కలిసిన టీడీపీ నేతలు, కుటుంబ సభ్యులు చెబుతున్న మాటల్ని బట్టి చంద్రబాబు జైల్లో ఎండవేడిమి కారణంగా డీహైడ్రేషన్ కు గురైనట్లు, అనంతరం ఆయనకు స్కిన్ అలర్జీ కూడా సోకినట్లు ప్రచారం జరిగింది. దీంతో ఇవాళ చంద్రబాబు ఆరోగ్యంపై టీడీపీ నేతలు తీవ్ర ఆందోళన వ్యక్తం చేశారు
+      `,
     },
     {
       id: 2,
       url: require('../../../assets/article3.png'),
-      serial: 'THIRD ARTICLE',
-      news: `The definite article is the word the. It limits the meaning of a noun to one particular thing. For example, your friend might ask, “Are you going to the party this weekend?” 
-      The definite article tells you that your friend is referring to a specific party that both of you already know about. The definite article can be used with singular, plural, or uncountable nouns. 
-      The definite article is the word the. It limits the meaning of a noun to one particular thing. For example, your friend might ask, “Are you going to the party this weekend?” The definite article tells you that your friend is referring to a specific party that both of you already know about. The definite article can be used with singular, plural, or uncountable nouns. The definite article is the word the.`,
+      topic: 'SPORTS',
+      heading: `చంద్రబాబు ఆరోగ్యంపై జైళ్ల శాఖ క్లారిటీ-బరువు వివాదంపైనా...
+      `,
+      content: `ఏపీలో స్కిల్ డెవలప్మెంట్ కేసులో అరెస్టు అయి రాజమండ్రి జైల్లో రిమాండ్ ఖైదీగా ఉంటున్న టీడీపీ అధినేత చంద్రబాబు ఆరోగ్యంపై నిన్నటి నుంచి మీడియాలో అనేక ఊహాగానాలు చక్కర్లు కొట్టాయి. ఈ మధ్య ఆయన్ను కలిసిన టీడీపీ నేతలు, కుటుంబ సభ్యులు చెబుతున్న మాటల్ని బట్టి చంద్రబాబు జైల్లో ఎండవేడిమి కారణంగా డీహైడ్రేషన్ కు గురైనట్లు, అనంతరం ఆయనకు స్కిన్ అలర్జీ కూడా సోకినట్లు ప్రచారం జరిగింది. దీంతో ఇవాళ చంద్రబాబు ఆరోగ్యంపై టీడీపీ నేతలు తీవ్ర ఆందోళన వ్యక్తం చేశారు
+      `,
     },
     {
       id: 3,
       url: require('../../../assets/article4.png'),
-      serial: 'FORTH ARTICLE',
-      news: `The definite article is the word the. It limits the meaning of a noun to one particular thing. For example, your friend might ask, “Are you going to the party this weekend?” 
-      The definite article tells you that your friend is referring to a specific party that both of you already know about. The definite article can be used with singular, plural, or uncountable nouns. 
-      The definite article is the word the. It limits the meaning of a noun to one particular thing. For example, your friend might ask, “Are you going to the party this weekend?” The definite article tells you that your friend is referring to a specific party that both of you already know about. The definite article can be used with singular, plural, or uncountable nouns. The definite article is the word the.`,
+      topic: 'ENTERTAINMENT',
+      heading: `చంద్రబాబు ఆరోగ్యంపై జైళ్ల శాఖ క్లారిటీ-బరువు వివాదంపైనా...
+      `,
+      content: `ఏపీలో స్కిల్ డెవలప్మెంట్ కేసులో అరెస్టు అయి రాజమండ్రి జైల్లో రిమాండ్ ఖైదీగా ఉంటున్న టీడీపీ అధినేత చంద్రబాబు ఆరోగ్యంపై నిన్నటి నుంచి మీడియాలో అనేక ఊహాగానాలు చక్కర్లు కొట్టాయి. ఈ మధ్య ఆయన్ను కలిసిన టీడీపీ నేతలు, కుటుంబ సభ్యులు చెబుతున్న మాటల్ని బట్టి చంద్రబాబు జైల్లో ఎండవేడిమి కారణంగా డీహైడ్రేషన్ కు గురైనట్లు, అనంతరం ఆయనకు స్కిన్ అలర్జీ కూడా సోకినట్లు ప్రచారం జరిగింది. దీంతో ఇవాళ చంద్రబాబు ఆరోగ్యంపై టీడీపీ నేతలు తీవ్ర ఆందోళన వ్యక్తం చేశారు
+      `,
     },
   ];
   const Tab = createMaterialTopTabNavigator();
