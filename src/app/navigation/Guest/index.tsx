@@ -27,15 +27,15 @@ export default function Guest({navigation}: any) {
           component={LoginWIthMobile}
         />
         <Stack.Screen
+          name="Verfiy with OTP"
+          options={{headerShown: false}}
+          component={VerifyOtp}
+        />
+        <Stack.Screen
           name="home-screen"
           options={{headerShown: false}}
           component={HomeScreen}
         />
-        {/* <Stack.Screen
-          name="Verfiy with OTP"
-          options={{headerShown: false}}
-          component={VerifyOtp}
-        /> */}
         {/* <Stack.Screen
           name="Request Access to Manager"
           options={{headerShown: false}}

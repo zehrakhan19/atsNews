@@ -14,12 +14,12 @@ const useLoginWithMobile = ({navigation}) => {
   // const [login, {isLoading: isLoadingLogin, isSuccess, isError, error}] =
   //   useLoginWithMobileMutation();
 
-  const checkMobileNumberValidity = number => {
-    setMobileNumber(number);
-    if (number.length < 10) {
-      setSendOtpDisable(true);
-    } else setSendOtpDisable(false);
-  };
+  // const checkMobileNumberValidity = number => {
+  //   setMobileNumber(number);
+  //   if (number.length < 10) {
+  //     setSendOtpDisable(true);
+  //   } else setSendOtpDisable(false);
+  // };
 
   const sendOTP = async () => {
     // try {
@@ -28,7 +28,7 @@ const useLoginWithMobile = ({navigation}) => {
     //     showApiResponse(error);
     //   }
     //   if (isSuccess || !error) {
-    //     navigation.navigate('Verfiy with OTP');
+    // navigation.navigate('Verfiy with OTP');
     //     dispatch(userMobileNumberEntered(mobileNumber));
     //   }
     // } catch (err) {
@@ -43,7 +43,7 @@ const useLoginWithMobile = ({navigation}) => {
     mobileNumber,
     sendOTP,
     setMobileNumber,
-    checkMobileNumberValidity,
+    // checkMobileNumberValidity,
     // isLoadingLogin,
   };
 };

@@ -1,12 +1,12 @@
+/* eslint-disable react-native/no-inline-styles */
 import React from 'react';
-import {View, Text, ScrollView, TouchableOpacity} from 'react-native';
+import {View, Text, ScrollView, TouchableOpacity, Image} from 'react-native';
 
 import {styles} from './otpverify.styles';
-// import OTPVerificationSvg from '../../../assets/auth-screen-images/otp-verification.svg';
 import {Button} from '../../../../../libs/ats-native-components/src';
 import OTPInputView from '@twotalltotems/react-native-otp-input';
 import {theme} from '../../../../config/theme';
-import {iOSUIKit, systemWeights} from 'react-native-typography';
+import {iOSUIKit, material, systemWeights} from 'react-native-typography';
 
 function OTPVerifyView({
   NavigateToChangeNumber,
@@ -16,59 +16,69 @@ function OTPVerifyView({
 }) {
   return (
     <>
-      <ScrollView>
+      <View>
+        <View
+          style={{
+            alignItems: 'center',
+            justifyContent: 'center',
+          }}>
+          <Image
+            source={require('../../../assets/otpImage.jpg')}
+            style={{
+              width: 400,
+              height: 280,
+              resizeMode: 'contain',
+            }}
+          />
+        </View>
         <View>
-          {/* <View>
-            <OTPVerificationSvg height={290} />
-          </View> */}
+          <View style={{padding: 10, gap: 20}}>
+            <Text
+              style={[iOSUIKit.largeTitleEmphasized, systemWeights.regular]}>
+              Verification Code
+            </Text>
+            <Text style={material.caption}>
+              A 4- digit code has been sent to +91 88769 78374 A 6-digits code
+              has been sent to your registered phone number for verification
+              purpose
+            </Text>
+          </View>
           <View>
-            <View>
-              <Text
-                style={[iOSUIKit.largeTitleEmphasized, systemWeights.regular]}>
-                OTP Verification
-              </Text>
-              <Text style={styles.subText}>
-                A 4- digit code has been sent to +91 88769 78374
-              </Text>
-            </View>
-
-            <TouchableOpacity onPress={NavigateToChangeNumber}>
-              <Text>Change phone number</Text>
-            </TouchableOpacity>
-            <View>
-              <OTPInputView
-                style={{width: '100%', height: 54}}
-                pinCount={4}
-                codeInputFieldStyle={{
-                  backgroundColor: theme.colors.secondary,
-                  borderRadius: 4,
-                  height: 54,
-                  width: 54,
-                  color: '#000',
-                }}
-                codeInputHighlightStyle={{
-                  borderColor: '#000',
-                }}
-                onCodeFilled={code => VerifyOtp(code)}
-              />
-            </View>
-
-            <View style={styles.otpSubInfo}>
-              <TouchableOpacity onPress={() => null}>
-                <Text>{resend}</Text>
-              </TouchableOpacity>
-            </View>
+            {/* <OTPInputView
+              style={{width: '100%', height: 54}}
+              pinCount={4}
+              codeInputFieldStyle={{
+                backgroundColor: theme.colors.secondary,
+                borderRadius: 4,
+                height: 54,
+                width: 54,
+                color: '#000',
+              }}
+              codeInputHighlightStyle={{
+                borderColor: '#000',
+              }}
+              onCodeFilled={code => {
+                VerifyOtp(code);
+              }}
+            /> */}
           </View>
         </View>
-      </ScrollView>
-      <View>
+      </View>
+      <View style={{padding: 10}}>
         <Button
           label="Login"
           size="large"
           callback={() => null}
           // disabled={isLoadingLogin}
-          borderRadius={0}
         />
+        <View style={styles.otpSubInfo}>
+          <Text style={material.body1}>Didn't get a code? </Text>
+          <TouchableOpacity onPress={() => null}>
+            <Text style={[material.body1, {color: theme.colors.primary}]}>
+              {resend}
+            </Text>
+          </TouchableOpacity>
+        </View>
       </View>
     </>
   );

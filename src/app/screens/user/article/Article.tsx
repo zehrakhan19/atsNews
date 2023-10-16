@@ -115,19 +115,22 @@ class Article extends Component {
               style={this.swipedCardPosition.getLayout()}
               {...this.PanResponder.panHandlers}>
               <View style={styles.mainContainer}>
-                <View style={{flex: 2, backgroundColor: '#000'}}>
+                <View style={{flex: 2}}>
                   <Image
                     source={this.props.article[i].url}
                     style={styles.image}
                   />
                 </View>
                 <View style={styles.article}>
-                  <Text style={[material.title, styles.subHeading]}>
-                    {item?.topic}
-                  </Text>
-                  <Text style={[material.body1, {color: '#000'}]}>
-                    {item?.news}
-                  </Text>
+                  <View>
+                    <Text style={[material.title, styles.subHeading]}>
+                      {item?.topic}
+                    </Text>
+                    <Text style={material.title}>{item?.heading}</Text>
+                    <Text style={[material.body1, {color: '#000'}]}>
+                      {item?.content}
+                    </Text>
+                  </View>
                 </View>
               </View>
             </Animated.View>
@@ -141,9 +144,9 @@ class Article extends Component {
               key={item?.id}
               style={this.position.getLayout()}
               {...this.PanResponder.panHandlers}>
-              <ViewShot style={styles.mainContainer} ref={this.ref}>
-                <View style={styles.mainContainer}>
-                  <View style={{flex: 2, backgroundColor: '#000'}}>
+              <View style={styles.mainContainer}>
+                <ViewShot style={styles.shotContainer} ref={this.ref}>
+                  <View style={{flex: 2}}>
                     <Image
                       source={this.props.article[i].url}
                       style={styles.image}
@@ -151,80 +154,74 @@ class Article extends Component {
                   </View>
                   <View style={styles.article}>
                     <View>
-                      <Text style={[material.title, styles.subHeading]}>
+                      {/* <Text style={[material.title, styles.subHeading]}>
                         {item?.topic}
-                      </Text>
+                      </Text> */}
+                      <Text style={material.title}>{item?.heading}</Text>
                       <Text style={[material.body1, {color: '#000'}]}>
-                        {item?.news}
+                        {item?.content}
                       </Text>
                     </View>
-                    <View style={{marginBottom: 120}}>
-                      <Text
-                        style={[material.body1, {color: 'gray', margin: 4}]}>
-                        5: 50 PM
-                      </Text>
-                      <Divider />
-                      <View style={styles.bottomTab}>
-                        <View style={styles.iconContainer}>
-                          <Icon name="like2" color={'gray'} size={24} />
-                          <Text style={[material.body1, {color: 'gray'}]}>
-                            30
-                          </Text>
-                        </View>
-                        <View style={styles.iconContainer}>
-                          <Icon name="dislike2" color={'gray'} size={24} />
-                          <Text style={[material.body1, {color: 'gray'}]}>
-                            30
-                          </Text>
-                        </View>
-                        <View style={styles.iconContainer}>
-                          <CommentIcon
-                            name="comment-multiple-outline"
-                            color={'gray'}
-                            size={24}
-                          />
-                          <Text style={[material.body1, {color: 'gray'}]}>
-                            30
-                          </Text>
-                        </View>
-                        <View style={styles.iconContainer}>
-                          <TouchableOpacity
-                            onPress={() => {
-                              this.ref.current.capture().then(uri => {
-                                this.myCustomShare(item?.topic, uri);
-                              });
-                            }}>
-                            <ShareIcon
-                              name="share-2"
-                              color={'gray'}
-                              size={24}
-                            />
-                          </TouchableOpacity>
-                        </View>
-                      </View>
+                  </View>
+                </ViewShot>
+
+                <View style={{marginBottom: 120}}>
+                  <Text style={[material.body1, {color: 'gray', margin: 4}]}>
+                    5: 50 PM
+                  </Text>
+                  <Divider />
+                  <View style={styles.bottomTab}>
+                    <View style={styles.iconContainer}>
+                      <Icon name="like2" color={'gray'} size={24} />
+                      <Text style={[material.body1, {color: 'gray'}]}>30</Text>
+                    </View>
+                    <View style={styles.iconContainer}>
+                      <Icon name="dislike2" color={'gray'} size={24} />
+                      <Text style={[material.body1, {color: 'gray'}]}>30</Text>
+                    </View>
+                    <View style={styles.iconContainer}>
+                      <CommentIcon
+                        name="comment-multiple-outline"
+                        color={'gray'}
+                        size={24}
+                      />
+                      <Text style={[material.body1, {color: 'gray'}]}>30</Text>
+                    </View>
+                    <View style={styles.iconContainer}>
+                      <TouchableOpacity
+                        onPress={() => {
+                          this.ref.current.capture().then(uri => {
+                            this.myCustomShare(item?.topic, uri);
+                          });
+                        }}>
+                        <ShareIcon name="share-2" color={'gray'} size={24} />
+                      </TouchableOpacity>
                     </View>
                   </View>
                 </View>
-              </ViewShot>
+              </View>
             </Animated.View>
           );
         } else {
           return (
             <Animated.View key={item?.id}>
               <View style={styles.mainContainer}>
-                <View style={{flex: 2, backgroundColor: '#000'}}>
+                <View style={{flex: 2}}>
                   <Image
                     source={this.props.article[i].url}
                     style={styles.image}
                   />
                 </View>
                 <View style={styles.article}>
-                  <Text style={[material.title, styles.subHeading]}>
-                    {item?.topic}
-                  </Text>
-                  <Text style={[material.body1, {color: '#000'}]}>
-                    {item?.news}
-                  </Text>
+                  <View>
+                    <Text style={[material.title, styles.subHeading]}>
+                      {item?.topic}
+                    </Text>
+                    <Text style={material.title}>{item?.heading}</Text>
+                    <Text style={[material.body1, {color: '#000'}]}>
+                      {item?.content}
+                    </Text>
+                  </View>
                 </View>
               </View>
             </Animated.View>
@@ -246,6 +243,13 @@ export const styles = StyleSheet.create({
     flex: 1,
     position: 'absolute',
     height: SCREEN_HEIGHT,
+    width: SCREEN_WIDTH,
+    backgroundColor: '#fff',
+  },
+  shotContainer: {
+    flex: 1,
+    position: 'relative',
+    height: SCREEN_HEIGHT - 20,
     width: SCREEN_WIDTH,
     backgroundColor: '#fff',
   },
