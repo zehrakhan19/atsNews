@@ -1,7 +1,7 @@
 import * as React from 'react';
-import { Text, Switch as PaperSwitch } from 'react-native-paper';
-import { StyleProp, StyleSheet, View, ViewStyle } from 'react-native';
-import { material } from 'react-native-typography';
+import {Text, Switch as PaperSwitch} from 'react-native-paper';
+import {StyleProp, StyleSheet, View, ViewStyle} from 'react-native';
+import {material} from 'react-native-typography';
 
 export interface SwitchButtonProps {
   value: boolean;
@@ -20,7 +20,7 @@ export function SwitchButton({
   style,
   disabled = false,
   label = '',
-  labelLeft = ''
+  labelLeft = '',
 }: SwitchButtonProps) {
   return (
     <View style={styles.gstSwitchConainer}>
@@ -31,9 +31,9 @@ export function SwitchButton({
         color={color}
         style={[style, styles.container]}
         disabled={disabled}
-        trackColor={{ false: '#767577', true: '#ffe599' }}
+        trackColor={{false: '#767577', true: '#ffe599'}}
         thumbColor={value ? '#ffc000' : '#f4f3f4'}
-        ios_backgroundColor='#3e3e3e'
+        ios_backgroundColor="#3e3e3e"
       />
       {label && <Text style={material.body1}>{label}</Text>}
     </View>
@@ -41,13 +41,13 @@ export function SwitchButton({
 }
 const styles = StyleSheet.create({
   container: {
-    marginVertical: 10
+    marginVertical: 10,
   },
   gstSwitchConainer: {
     flexDirection: 'row',
     alignItems: 'center',
     marginVertical: 5,
-    gap: 5
-  }
+    gap: 5,
+  },
 });
 export default SwitchButton;
