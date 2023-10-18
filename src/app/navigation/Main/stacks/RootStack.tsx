@@ -5,6 +5,7 @@ import BottomTabs from '../bottomTab';
 import ReporterDashboard from '../../../screens/user/reporter-dashboard';
 import AddNews from '../../../screens/user/add-news';
 import HomeScreen from '../../../screens/user/home-screen';
+import AddEmployee from '../../../screens/user/add-employee';
 
 function RootStack() {
   const Stack = createStackNavigator();
@@ -32,6 +33,11 @@ function RootStack() {
         options={{headerShown: false}}
         name="add-news"
         component={AddNews}
+      />
+      <Stack.Screen
+        options={{headerShown: false}}
+        name="add-employee"
+        component={AddEmployee}
       />
     </Stack.Navigator>
   );

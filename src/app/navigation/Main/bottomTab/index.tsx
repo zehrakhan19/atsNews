@@ -13,6 +13,8 @@ import PostIcon from 'react-native-vector-icons/Ionicons';
 import MoreIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import Categories from '../../../screens/user/categories';
 import Copy1 from 'react-native-vector-icons/AntDesign';
+import Staff from '../../../screens/user/staff';
+import ViewNews from '../../../screens/user/view-news';
 
 function BottomTabs() {
   const Tab = createMaterialBottomTabNavigator();
@@ -55,7 +57,7 @@ function BottomTabs() {
       /> */}
       <Tab.Screen
         name=" Post Tab"
-        component={HomeScreen}
+        component={ViewNews}
         options={{
           tabBarLabel: 'Post',
           tabBarIcon: ({color}) => (
@@ -65,9 +67,9 @@ function BottomTabs() {
       />
       <Tab.Screen
         name=" Customers Tab"
-        component={HomeScreen}
+        component={Staff}
         options={{
-          tabBarLabel: 'Customers',
+          tabBarLabel: 'Staff',
           tabBarIcon: ({color}) => (
             <Customer name={'user'} color={color} size={26} />
           ),
