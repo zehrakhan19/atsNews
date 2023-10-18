@@ -14,6 +14,7 @@ export const theme = {
     red: '#f86262',
     green: '#38A91B',
     danger: '#f98f7f',
+    bar: '#2a2929', //282c35
     success: '#62bd62',
     greenAlfa: 'rgba(56, 169, 27, 0.24)',
     ascent: '#16312d',

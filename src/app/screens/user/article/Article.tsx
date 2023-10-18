@@ -165,7 +165,7 @@ class Article extends Component {
                   </View>
                 </ViewShot>
 
-                <View style={{marginBottom: 120}}>
+                <View style={{marginBottom: 130, paddingHorizontal: 10}}>
                   <Text style={[material.body1, {color: 'gray', margin: 4}]}>
                     5: 50 PM
                   </Text>
