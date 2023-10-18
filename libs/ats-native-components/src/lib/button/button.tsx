@@ -43,7 +43,7 @@ export function Button({
         borderRadius: borderRadius,
         ...(filled && {backgroundColor: '#fff'}),
         width: half ? '50%' : '100%',
-        // borderColor: mode === 'outlined' ? color : '#000'
+        borderColor: mode === 'outlined' ? color : '#000',
       }}
       contentStyle={{
         ...(size === 'large' && {height: 50}),

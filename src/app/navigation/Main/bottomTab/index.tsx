@@ -11,6 +11,8 @@ import HomeScreenIcon from 'react-native-vector-icons/Feather';
 import BasketIcon from 'react-native-vector-icons/Ionicons';
 import PostIcon from 'react-native-vector-icons/Ionicons';
 import MoreIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+import Categories from '../../../screens/user/categories';
+import Copy1 from 'react-native-vector-icons/AntDesign';
 
 function BottomTabs() {
   const Tab = createMaterialBottomTabNavigator();
@@ -68,6 +70,16 @@ function BottomTabs() {
           tabBarLabel: 'Customers',
           tabBarIcon: ({color}) => (
             <Customer name={'user'} color={color} size={26} />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="Categories Tab"
+        component={Categories}
+        options={{
+          tabBarLabel: 'Categories',
+          tabBarIcon: ({color}) => (
+            <Copy1 name={'copy1'} color={color} size={26} />
           ),
         }}
       />
