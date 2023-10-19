@@ -10,7 +10,7 @@ import {iOSUIKit} from 'react-native-typography';
 import {Fab} from '../../../../../libs/ats-native-components/src';
 // import newspaper from 'react-native-vector-icons/Ionicons';
 
-const ReporterDashboardView = ({navigation, handleNavigateToAddNews}: any) => {
+const ReporterDashboardView = ({navigation}: any) => {
   return (
     <>
       <Appbar.Header style={{backgroundColor: 'white'}}>
@@ -63,14 +63,6 @@ const ReporterDashboardView = ({navigation, handleNavigateToAddNews}: any) => {
           </View>
         </View>
       </ScrollView>
-      <Fab
-        icon="file-plus"
-        color="white"
-        style={styles.fab}
-        callback={() => {
-          handleNavigateToAddNews();
-        }}
-      />
     </>
   );
 };
