@@ -18,6 +18,9 @@ import {Divider} from 'react-native-paper';
 import Icon from 'react-native-vector-icons/AntDesign';
 import CommentIcon from 'react-native-vector-icons/MaterialCommunityIcons';
 import ShareIcon from 'react-native-vector-icons/Feather';
+import ReportIcon from 'react-native-vector-icons/Feather';
+import ClockIcon from 'react-native-vector-icons/MaterialIcons';
+import {theme} from '../../../../config/theme';
 
 const SCREEN_HEIGHT = Dimensions.get('window').height;
 const SCREEN_WIDTH = Dimensions.get('window').width;
@@ -122,13 +125,66 @@ class Article extends Component {
                   />
                 </View>
                 <View style={styles.article}>
+                  <View style={styles.iconTab}>
+                    <View style={[styles.iconContainer, styles.elevation]}>
+                      <Icon name="like2" color={'gray'} size={20} />
+                    </View>
+                    <View style={[styles.iconContainer, styles.elevation]}>
+                      <Icon name="dislike2" color={'gray'} size={20} />
+                    </View>
+                    <View style={[styles.iconContainer, styles.elevation]}>
+                      <CommentIcon
+                        name="comment-multiple-outline"
+                        color={'gray'}
+                        size={20}
+                      />
+                    </View>
+                    <View style={[styles.iconContainer, styles.elevation]}>
+                      <TouchableOpacity>
+                        <ShareIcon name="share-2" color={'gray'} size={20} />
+                      </TouchableOpacity>
+                    </View>
+                    <View style={[styles.iconContainer, styles.elevation]}>
+                      <ReportIcon
+                        name="alert-triangle"
+                        color={'gray'}
+                        size={20}
+                      />
+                    </View>
+                  </View>
                   <View>
-                    <Text style={[material.title, styles.subHeading]}>
-                      {item?.topic}
-                    </Text>
                     <Text style={material.title}>{item?.heading}</Text>
                     <Text style={[material.body1, {color: '#000'}]}>
                       {item?.content}
+                    </Text>
+                  </View>
+                </View>
+                <View style={styles.bottomTab}>
+                  <View style={{flexDirection: 'row', gap: 6}}>
+                    <View style={styles.reporterImageBox}>
+                      <Image
+                        source={require('../../../assets/reporter.png')}
+                        style={styles.reporterImage}
+                      />
+                    </View>
+                    <View style={{justifyContent: 'center'}}>
+                      <Text style={[material.body2, {color: 'gray'}]}>
+                        Reporter Name
+                      </Text>
+                      <Text style={material.caption}>
+                        Sr.Reporter, hyderabad
+                      </Text>
+                    </View>
+                  </View>
+                  <View
+                    style={{
+                      flexDirection: 'row',
+                      gap: 6,
+                      alignItems: 'center',
+                    }}>
+                    <ClockIcon name="av-timer" color={'gray'} size={24} />
+                    <Text style={[material.body2, {color: 'gray'}]}>
+                      05: 50 PM
                     </Text>
                   </View>
                 </View>
@@ -153,50 +209,72 @@ class Article extends Component {
                     />
                   </View>
                   <View style={styles.article}>
+                    <View style={styles.iconTab}>
+                      <View style={[styles.iconContainer, styles.elevation]}>
+                        <Icon name="like2" color={'gray'} size={20} />
+                      </View>
+                      <View style={[styles.iconContainer, styles.elevation]}>
+                        <Icon name="dislike2" color={'gray'} size={20} />
+                      </View>
+                      <View style={[styles.iconContainer, styles.elevation]}>
+                        <CommentIcon
+                          name="comment-multiple-outline"
+                          color={'gray'}
+                          size={20}
+                        />
+                      </View>
+                      <View style={[styles.iconContainer, styles.elevation]}>
+                        <TouchableOpacity
+                          onPress={() => {
+                            this.ref.current.capture().then(uri => {
+                              this.myCustomShare(item?.topic, uri);
+                              console.log(uri);
+                            });
+                          }}>
+                          <ShareIcon name="share-2" color={'gray'} size={20} />
+                        </TouchableOpacity>
+                      </View>
+                      <View style={[styles.iconContainer, styles.elevation]}>
+                        <ReportIcon
+                          name="alert-triangle"
+                          color={'gray'}
+                          size={20}
+                        />
+                      </View>
+                    </View>
                     <View>
-                      {/* <Text style={[material.title, styles.subHeading]}>
-                        {item?.topic}
-                      </Text> */}
                       <Text style={material.title}>{item?.heading}</Text>
-                      <Text style={[material.body1, {color: '#000'}]}>
-                        {item?.content}
-                      </Text>
+                      <Text style={material.body1}>{item?.content}</Text>
                     </View>
                   </View>
                 </ViewShot>
-
-                <View style={{marginBottom: 130, paddingHorizontal: 10}}>
-                  <Text style={[material.body1, {color: 'gray', margin: 4}]}>
-                    5: 50 PM
-                  </Text>
-                  <Divider />
-                  <View style={styles.bottomTab}>
-                    <View style={styles.iconContainer}>
-                      <Icon name="like2" color={'gray'} size={24} />
-                      <Text style={[material.body1, {color: 'gray'}]}>30</Text>
-                    </View>
-                    <View style={styles.iconContainer}>
-                      <Icon name="dislike2" color={'gray'} size={24} />
-                      <Text style={[material.body1, {color: 'gray'}]}>30</Text>
-                    </View>
-                    <View style={styles.iconContainer}>
-                      <CommentIcon
-                        name="comment-multiple-outline"
-                        color={'gray'}
-                        size={24}
+                <View style={styles.bottomTab}>
+                  <View style={{flexDirection: 'row', gap: 6}}>
+                    <View style={styles.reporterImageBox}>
+                      <Image
+                        source={require('../../../assets/reporter.png')}
+                        style={styles.reporterImage}
                       />
-                      <Text style={[material.body1, {color: 'gray'}]}>30</Text>
                     </View>
-                    <View style={styles.iconContainer}>
-                      <TouchableOpacity
-                        onPress={() => {
-                          this.ref.current.capture().then(uri => {
-                            this.myCustomShare(item?.topic, uri);
-                          });
-                        }}>
-                        <ShareIcon name="share-2" color={'gray'} size={24} />
-                      </TouchableOpacity>
+                    <View style={{justifyContent: 'center'}}>
+                      <Text style={[material.body2, {color: 'gray'}]}>
+                        Reporter Name
+                      </Text>
+                      <Text style={material.caption}>
+                        Sr.Reporter, hyderabad
+                      </Text>
                     </View>
+                  </View>
+                  <View
+                    style={{
+                      flexDirection: 'row',
+                      gap: 6,
+                      alignItems: 'center',
+                    }}>
+                    <ClockIcon name="av-timer" color={'gray'} size={24} />
+                    <Text style={[material.body2, {color: 'gray'}]}>
+                      05: 50 PM
+                    </Text>
                   </View>
                 </View>
               </View>
@@ -213,13 +291,66 @@ class Article extends Component {
                   />
                 </View>
                 <View style={styles.article}>
+                  <View style={styles.iconTab}>
+                    <View style={[styles.iconContainer, styles.elevation]}>
+                      <Icon name="like2" color={'gray'} size={20} />
+                    </View>
+                    <View style={[styles.iconContainer, styles.elevation]}>
+                      <Icon name="dislike2" color={'gray'} size={20} />
+                    </View>
+                    <View style={[styles.iconContainer, styles.elevation]}>
+                      <CommentIcon
+                        name="comment-multiple-outline"
+                        color={'gray'}
+                        size={20}
+                      />
+                    </View>
+                    <View style={[styles.iconContainer, styles.elevation]}>
+                      <TouchableOpacity>
+                        <ShareIcon name="share-2" color={'gray'} size={20} />
+                      </TouchableOpacity>
+                    </View>
+                    <View style={[styles.iconContainer, styles.elevation]}>
+                      <ReportIcon
+                        name="alert-triangle"
+                        color={'gray'}
+                        size={20}
+                      />
+                    </View>
+                  </View>
                   <View>
-                    <Text style={[material.title, styles.subHeading]}>
-                      {item?.topic}
-                    </Text>
                     <Text style={material.title}>{item?.heading}</Text>
                     <Text style={[material.body1, {color: '#000'}]}>
                       {item?.content}
+                    </Text>
+                  </View>
+                </View>
+                <View style={styles.bottomTab}>
+                  <View style={{flexDirection: 'row', gap: 6}}>
+                    <View style={styles.reporterImageBox}>
+                      <Image
+                        source={require('../../../assets/reporter.png')}
+                        style={styles.reporterImage}
+                      />
+                    </View>
+                    <View style={{justifyContent: 'center'}}>
+                      <Text style={[material.body2, {color: 'gray'}]}>
+                        Reporter Name
+                      </Text>
+                      <Text style={material.caption}>
+                        Sr.Reporter, hyderabad
+                      </Text>
+                    </View>
+                  </View>
+                  <View
+                    style={{
+                      flexDirection: 'row',
+                      gap: 6,
+                      alignItems: 'center',
+                    }}>
+                    <ClockIcon name="av-timer" color={'gray'} size={24} />
+                    <Text style={[material.body2, {color: 'gray'}]}>
+                      05: 50 PM
                     </Text>
                   </View>
                 </View>
@@ -249,26 +380,60 @@ export const styles = StyleSheet.create({
   shotContainer: {
     flex: 1,
     position: 'relative',
-    height: SCREEN_HEIGHT - 20,
+    height: SCREEN_HEIGHT,
     width: SCREEN_WIDTH,
     backgroundColor: '#fff',
   },
-  bottomTab: {
+  iconTab: {
+    position: 'relative',
+    top: -30,
     flexDirection: 'row',
-    gap: 16,
-    paddingVertical: 8,
+    gap: 10,
+    justifyContent: 'flex-end',
+    paddingVertical: 2,
   },
-  iconContainer: {flexDirection: 'row', gap: 5},
+  bottomTab: {
+    marginBottom: 130,
+    justifyContent: 'space-between',
+    flexDirection: 'row',
+    alignItems: 'center',
+    paddingHorizontal: 10,
+  },
+  iconContainer: {
+    backgroundColor: 'white',
+    borderRadius: 50,
+    padding: 6,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  elevation: {
+    elevation: 20,
+    shadowColor: '#52006A',
+  },
   image: {
     flex: 1,
+    position: 'relative',
+    top: -6,
     height: null,
     width: null,
     resizeMode: 'contain',
   },
+  reporterImageBox: {
+    backgroundColor: theme.colors.bar,
+    borderRadius: 50,
+    paddingVertical: 8,
+    paddingHorizontal: 3,
+    margin: 5,
+  },
+  reporterImage: {
+    height: 30,
+    width: 40,
+    resizeMode: 'contain',
+  },
   article: {
     flex: 3,
-    padding: 10,
-    justifyContent: 'space-between',
+    paddingVertical: 5,
+    paddingHorizontal: 10,
   },
   subHeading: {color: 'red', alignSelf: 'center'},
 });

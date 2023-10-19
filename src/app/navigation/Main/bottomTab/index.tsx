@@ -12,10 +12,13 @@ import BasketIcon from 'react-native-vector-icons/Ionicons';
 import PostIcon from 'react-native-vector-icons/Ionicons';
 import MoreIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import Categories from '../../../screens/user/categories';
-import Copy1 from 'react-native-vector-icons/AntDesign';
+import CategoriesIcon from 'react-native-vector-icons/AntDesign';
+import {useTranslation} from 'react-i18next';
+import {Image} from 'react-native';
 
 function BottomTabs() {
   const Tab = createMaterialBottomTabNavigator();
+  const {t} = useTranslation();
 
   return (
     <Tab.Navigator
@@ -27,67 +30,101 @@ function BottomTabs() {
         name="home-screen"
         component={HomeScreen}
         options={{
-          tabBarLabel: 'Home',
+          tabBarLabel: `${t('home')}`,
           tabBarIcon: ({color}) => (
             <HomeScreenIcon name={'home'} color={color} size={26} />
           ),
         }}
       />
       <Tab.Screen
-        name="DashbardTab"
+        name="SearchTab"
         component={ReporterDashboard}
         options={{
-          tabBarLabel: 'Dashboard',
+          tabBarLabel: `${t('search')}`,
           tabBarIcon: ({color}) => (
             <DashboardIcon name={'monitor-dashboard'} color={color} size={26} />
           ),
         }}
       />
+      <Tab.Screen
+        name="ActionReactionTab"
+        component={ReporterDashboard}
+        options={{
+          tabBarLabel: `${t('action-reaction')}`,
+          tabBarIcon: ({color}) => (
+            <Image
+              source={require('../../../assets/action.png')}
+              style={{height: null, width: null, flex: 1, c}}
+            />
+            // <DashboardIcon name={'monitor-dashboard'} color={color} size={26} />
+          ),
+        }}
+      />
       {/* <Tab.Screen
-        name=" Basket Tab"
+        name="DashbardTab"
+        component={ReporterDashboard}
+        options={{
+          tabBarLabel: `${t('dashboard')}`,
+          tabBarIcon: ({color}) => (
+            <DashboardIcon name={'monitor-dashboard'} color={color} size={26} />
+          ),
+        }}
+      /> */}
+      {/* <Tab.Screen
+        name="Basket Tab"
         component={HomeScreen}
         options={{
-          tabBarLabel: 'Basket',
+          tabBarLabel:`${t("basket")`},
           tabBarIcon: ({color}) => (
             <BasketIcon name={'basket-outline'} color={color} size={26} />
           ),
         }}
       /> */}
       <Tab.Screen
-        name=" Post Tab"
+        name="Post Tab"
         component={HomeScreen}
         options={{
-          tabBarLabel: 'Post',
+          tabBarLabel: `${t('post')}`,
           tabBarIcon: ({color}) => (
             <PostIcon name={'newspaper-outline'} color={color} size={26} />
           ),
         }}
       />
       <Tab.Screen
-        name=" Customers Tab"
+        name="UnreadTab"
+        component={ReporterDashboard}
+        options={{
+          tabBarLabel: `${t('unread')}`,
+          tabBarIcon: ({color}) => (
+            <DashboardIcon name={'monitor-dashboard'} color={color} size={26} />
+          ),
+        }}
+      />
+      {/* <Tab.Screen
+        name="Customers Tab"
         component={HomeScreen}
         options={{
-          tabBarLabel: 'Customers',
+          tabBarLabel:`${t("customers")}`,
           tabBarIcon: ({color}) => (
             <Customer name={'user'} color={color} size={26} />
           ),
         }}
-      />
-      <Tab.Screen
+      /> */}
+      {/* <Tab.Screen
         name="Categories Tab"
         component={Categories}
         options={{
-          tabBarLabel: 'Categories',
+          tabBarLabel: `${t('categories')}`,
           tabBarIcon: ({color}) => (
-            <Copy1 name={'copy1'} color={color} size={26} />
+            <CategoriesIcon name={'copy1'} color={color} size={26} />
           ),
         }}
-      />
-      <Tab.Screen
-        name=" More Tab"
+      /> */}
+      {/* <Tab.Screen
+        name="More Tab"
         component={HomeScreen}
         options={{
-          tabBarLabel: 'More',
+          tabBarLabel: `${t('more')}`,
           tabBarIcon: ({color}) => (
             <MoreIcons
               name={'view-grid-plus-outline'}
@@ -96,7 +133,7 @@ function BottomTabs() {
             />
           ),
         }}
-      />
+      /> */}
     </Tab.Navigator>
   );
 }

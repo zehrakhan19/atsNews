@@ -1,18 +1,20 @@
 /* eslint-disable react-native/no-inline-styles */
 import {View, Text, TouchableOpacity, StyleSheet} from 'react-native';
 import React from 'react';
-import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+import ThemeIcon from 'react-native-vector-icons/MaterialCommunityIcons';
 import ArrowIcon from 'react-native-vector-icons/SimpleLineIcons';
 import ReloadIcon from 'react-native-vector-icons/AntDesign';
 import {theme} from '../../../../config/theme';
+import {useTranslation} from 'react-i18next';
 
 const TopNavigation = ({index, setIndex}) => {
+  const {t} = useTranslation();
   return (
     <View style={{...styles.container, backgroundColor: theme.colors.bar}}>
       {index === 0 ? (
         <TouchableOpacity style={styles.left}>
           {/* <Text style={{...styles.text, color: 'lightgrey'}}>
-            <Icon
+            <ThemeIcon
               name="theme-light-dark"
               size={24}
               color={theme.colors.primary}
@@ -24,11 +26,13 @@ const TopNavigation = ({index, setIndex}) => {
           style={styles.left}
           onPress={() => setIndex(index === 0 ? 1 : 0)}>
           <ArrowIcon name="arrow-left" size={15} color={theme.colors.primary} />
-          <Text style={{...styles.text, color: 'lightgrey'}}>Discover</Text>
+          <Text style={{...styles.text, color: 'lightgrey'}}>
+            {t('discover')}
+          </Text>
         </TouchableOpacity>
       )}
       <Text style={{...styles.center, color: '#fff'}}>
-        {index ? 'All News' : 'Discover'}
+        {index ? `${t('all-news')}` : `${t('discover')}`}
       </Text>
       {index ? (
         <TouchableOpacity style={styles.right}>
@@ -40,7 +44,9 @@ const TopNavigation = ({index, setIndex}) => {
         <TouchableOpacity
           style={styles.left}
           onPress={() => setIndex(index === 0 ? 1 : 0)}>
-          <Text style={{...styles.text, color: 'lightgrey'}}>All News</Text>
+          <Text style={{...styles.text, color: 'lightgrey'}}>
+            {t('all-news')}
+          </Text>
           <ArrowIcon
             name="arrow-right"
             size={15}
@@ -64,7 +70,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     width: 80,
-    justifyContent: 'space-between',
+    justifyContent: 'space-evenly',
   },
   text: {
     fontSize: 14,
