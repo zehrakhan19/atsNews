@@ -12,9 +12,15 @@ import BasketIcon from 'react-native-vector-icons/Ionicons';
 import PostIcon from 'react-native-vector-icons/Ionicons';
 import MoreIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import Categories from '../../../screens/user/categories';
+<<<<<<< HEAD
 import CategoriesIcon from 'react-native-vector-icons/AntDesign';
 import {useTranslation} from 'react-i18next';
 import {Image} from 'react-native';
+=======
+import Copy1 from 'react-native-vector-icons/AntDesign';
+import Staff from '../../../screens/user/staff';
+import ViewNews from '../../../screens/user/view-news';
+>>>>>>> 895f4e9d5b0580176f22d82d7de1031d1b9cb1f3
 
 function BottomTabs() {
   const Tab = createMaterialBottomTabNavigator();
@@ -81,8 +87,13 @@ function BottomTabs() {
         }}
       /> */}
       <Tab.Screen
+<<<<<<< HEAD
         name="Post Tab"
         component={HomeScreen}
+=======
+        name=" Post Tab"
+        component={ViewNews}
+>>>>>>> 895f4e9d5b0580176f22d82d7de1031d1b9cb1f3
         options={{
           tabBarLabel: `${t('post')}`,
           tabBarIcon: ({color}) => (
@@ -91,6 +102,7 @@ function BottomTabs() {
         }}
       />
       <Tab.Screen
+<<<<<<< HEAD
         name="UnreadTab"
         component={ReporterDashboard}
         options={{
@@ -105,6 +117,12 @@ function BottomTabs() {
         component={HomeScreen}
         options={{
           tabBarLabel:`${t("customers")}`,
+=======
+        name=" Customers Tab"
+        component={Staff}
+        options={{
+          tabBarLabel: 'Staff',
+>>>>>>> 895f4e9d5b0580176f22d82d7de1031d1b9cb1f3
           tabBarIcon: ({color}) => (
             <Customer name={'user'} color={color} size={26} />
           ),
