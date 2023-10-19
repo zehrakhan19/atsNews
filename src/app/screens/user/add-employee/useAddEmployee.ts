@@ -27,7 +27,7 @@ const useAddEmployee = ({navigation}: any) => {
   const [employee, setEmployee] = useState(initialSate);
   const [address, setAddress] = useState({});
 
-  var query = require('india-pincode-search');
+  // var query = require('india-pincode-search');
 
   const handleInputChange = (item: string, value: string) => {
     setEmployee(prev => ({
@@ -40,8 +40,8 @@ const useAddEmployee = ({navigation}: any) => {
       ...prev,
       searchPincode: value,
     }));
-    setAddress(query.search(value));
-    console.log(query.search(value));
+    // setAddress(query.search(value));
+    // console.log(query.search(value));
   };
   const handleWorkAreaSearch = (workArea: any, value: any) => {
     setEmployee(prev => ({
@@ -49,7 +49,7 @@ const useAddEmployee = ({navigation}: any) => {
       workArea: value,
     }));
 
-    console.log(query.search(value));
+    // console.log(query.search(value));
   };
   return {
     navigation,

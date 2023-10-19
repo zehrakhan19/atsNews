@@ -1,5 +1,6 @@
 {
-  "change-language": "Change language",
+  "change-language": "Select your App Language",
+  "selected-language": "English",
   "welcome": "Welcome",
   "discover": "Discover",
   "all-news": "All News",
@@ -11,6 +12,7 @@
   "basket": "Basket",
   "post": "Post",
   "customers": "Customers",
+  "staff": "Staff",
   "categories": "Categories",
   "more": "More"
 }

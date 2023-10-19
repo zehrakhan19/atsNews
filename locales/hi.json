@@ -1,5 +1,6 @@
 {
   "change-language": "भाषा बदलें",
+  "selected-language": "हिंदी",
   "welcome": "स्वागत है",
   "discover": "खोज",
   "all-news": "सभी समाचार",
@@ -11,6 +12,7 @@
   "basket": "टोकरी",
   "post": "डाक",
   "customers": "ग्राहक",
+  "staff": "कर्मचारी",
   "categories": "श्रेणियाँ",
   "more": "अधिक"
 }

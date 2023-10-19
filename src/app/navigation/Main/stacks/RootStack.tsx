@@ -6,6 +6,7 @@ import ReporterDashboard from '../../../screens/user/reporter-dashboard';
 import AddNews from '../../../screens/user/add-news';
 import HomeScreen from '../../../screens/user/home-screen';
 import AddEmployee from '../../../screens/user/add-employee';
+import ActionReaction from '../../../screens/user/action-reaction';
 
 function RootStack() {
   const Stack = createStackNavigator();
@@ -28,6 +29,11 @@ function RootStack() {
         options={{headerShown: false}}
         name="reporter-dashboard"
         component={ReporterDashboard}
+      /> */}
+      {/* <Stack.Screen
+        options={{headerShown: false}}
+        name="action-reaction"
+        component={ActionReaction}
       /> */}
       <Stack.Screen
         options={{headerShown: false}}

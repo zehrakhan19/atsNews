@@ -4,20 +4,10 @@
 import React from 'react';
 import {View} from 'react-native';
 import {Appbar} from '../../../../../libs/ats-native-components/src';
-import {theme} from '../../../../config/theme';
-import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs';
 import Article from '../article/Article';
 import {Divider} from 'react-native-paper';
 
 const NewsScreenView = ({navigation}: any) => {
-  const renderHomeScreenView = () => {
-    return (
-      <>
-        <Article article={ARTICLES} />
-        {/* {renderTabComponent()} */}
-      </>
-    );
-  };
   const ARTICLES = [
     {
       id: 0,
@@ -56,33 +46,15 @@ const NewsScreenView = ({navigation}: any) => {
       `,
     },
   ];
-  const Tab = createMaterialTopTabNavigator();
-  const renderTabComponent = () => (
-    <Tab.Navigator
-      screenOptions={{
-        tabBarGap: 0,
-        tabBarScrollEnabled: true,
-      }}>
-      <Tab.Screen name="Latest News">
-        {() => <DataView data={ARTICLES} />}
-      </Tab.Screen>
-      <Tab.Screen name="Viral News">{() => <DataView data={[]} />}</Tab.Screen>
-      <Tab.Screen name="Trending News">
-        {() => <DataView data={[]} />}
-      </Tab.Screen>
-      <Tab.Screen name="Local News">{() => <DataView data={[]} />}</Tab.Screen>
-    </Tab.Navigator>
-  );
-  const DataView = ({data}: any) => {
-    return <Article article={data} />;
-  };
 
   const renderAppBar = () => {
     return (
       <Appbar title={'Home screen'} backAction={() => navigation.goBack()} />
     );
   };
-
+  const renderHomeScreenView = () => {
+    return <Article article={ARTICLES} />;
+  };
   return (
     <>
       {/* {renderAppBar()} */}

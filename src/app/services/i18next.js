@@ -2,10 +2,12 @@ import i18next from 'i18next';
 import {initReactI18next} from 'react-i18next';
 import en from '../../../locales/en.json';
 import hi from '../../../locales/hi.json';
+import te from '../../../locales/te.json';
 
 export const languageResources = {
   en: {translation: en},
   hi: {translation: hi},
+  te: {translation: te},
 };
 
 i18next.use(initReactI18next).init({
