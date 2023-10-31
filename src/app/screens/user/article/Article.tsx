@@ -1,5 +1,5 @@
 /* eslint-disable react-native/no-inline-styles */
-import React, {Component, createRef} from 'react';
+import React, {Component, Fragment, createRef} from 'react';
 import {
   View,
   Text,
@@ -9,6 +9,7 @@ import {
   PanResponder,
   StyleSheet,
   TouchableOpacity,
+  Easing,
 } from 'react-native';
 import PropTypes from 'prop-types';
 import {material} from 'react-native-typography';
@@ -20,6 +21,10 @@ import ShareIcon from 'react-native-vector-icons/Feather';
 import ReportIcon from 'react-native-vector-icons/Feather';
 import ClockIcon from 'react-native-vector-icons/MaterialIcons';
 import {theme} from '../../../../config/theme';
+import ArticleOptions from '../article-options/ArticleOptions';
+import Comments from '../comments/Comments';
+import InterstitialAds from '../interstitial-ads';
+import {BannerAd, TestIds, BannerAdSize} from 'react-native-google-mobile-ads';
 
 const SCREEN_HEIGHT = Dimensions.get('window').height;
 const SCREEN_WIDTH = Dimensions.get('window').width;
@@ -29,26 +34,27 @@ class Article extends Component {
   position: Animated.ValueXY;
   swipedCardPosition: Animated.ValueXY;
   PanResponder: any;
-  shotRef: React.RefObject<unknown>;
+  ref: React.RefObject<any>;
 
   constructor(props: any) {
     super(props);
     this.position = new Animated.ValueXY();
     this.swipedCardPosition = new Animated.ValueXY({x: 0, y: -SCREEN_HEIGHT});
-    this.shotRef = createRef();
+    this.ref = createRef();
     this.state = {
       currentIndex: 0,
       imageUri: '',
+      commentVisible: false,
+      optionVisible: false,
     };
   }
-  // ref = React.createRef();
-  myCustomShare = async (headline: any, uri: any) => {
+  myCustomShare = async (message: any) => {
     const shareOptions = {
-      url: uri,
-      message: headline,
+      // url: uri,
+      message: message,
     };
     try {
-      const shareResponse = await Share.open(shareOptions);
+      const ShareResponse = await Share.open(shareOptions);
     } catch (err) {
       console.log('Error => ', err);
     }
@@ -75,7 +81,8 @@ class Article extends Component {
         ) {
           Animated.timing(this.swipedCardPosition, {
             toValue: {x: 0, y: 0},
-            duration: 400,
+            duration: 500,
+            easing: Easing.ease,
             useNativeDriver: false,
           }).start(() => {
             this.setState({currentIndex: this.state.currentIndex - 1});
@@ -88,7 +95,8 @@ class Article extends Component {
         ) {
           Animated.timing(this.position, {
             toValue: {x: 0, y: -SCREEN_HEIGHT},
-            duration: 400,
+            duration: 500,
+            easing: Easing.ease,
             useNativeDriver: false,
           }).start(() => {
             this.setState({currentIndex: this.state.currentIndex + 1});
@@ -114,17 +122,17 @@ class Article extends Component {
       key={item?.id}
       style={this.position.getLayout()}
       {...this.PanResponder.panHandlers}>
-      <View style={styles.mainContainer}>
+      <View style={[styles.mainContainer, {backgroundColor: '#fff'}]}>
+        <InterstitialAds index={index} />
         <ViewShot
           style={styles.shotContainer}
-          ref={this.shotRef}
-          // options={{fileName: 'NewsArticle', format: 'jpg', quality: 0.9}}
-        >
-          <>
+          ref={this.ref}
+          options={{fileName: 'NewsArticle', format: 'jpg', quality: 0.9}}>
+          <Fragment>
             <View style={{flex: 2}}>
               <Image
                 source={this.props.article[index].url}
-                style={styles.image}
+                style={styles.currImage}
               />
             </View>
             <View style={styles.article}>
@@ -140,6 +148,7 @@ class Article extends Component {
                     name="comment-multiple-outline"
                     color={'gray'}
                     size={20}
+                    onPress={() => this.setState({commentVisible: true})}
                   />
                 </View>
                 <View style={[styles.iconContainer, styles.elevation]}>
@@ -148,19 +157,23 @@ class Article extends Component {
                     color={'gray'}
                     size={20}
                     onPress={() => {
-                      this.shotRef.current
+                      this.ref.current
                         .capture()
-                        .then(async (uri: any) => {
-                          console.log(uri, 'uri');
-                          return this.myCustomShare(item?.heading, uri);
+                        .then((uri: any) => {
+                          console.log('do something with ', uri);
                         })
                         .catch(({err}: any) => console.log(err));
-                      console.log('share clicked');
+                      this.myCustomShare(item?.heading);
                     }}
                   />
                 </View>
                 <View style={[styles.iconContainer, styles.elevation]}>
-                  <ReportIcon name="alert-triangle" color={'gray'} size={20} />
+                  <ReportIcon
+                    name="alert-triangle"
+                    color={'gray'}
+                    size={20}
+                    onPress={() => this.setState({optionVisible: true})}
+                  />
                 </View>
               </View>
               <View>
@@ -168,7 +181,13 @@ class Article extends Component {
                 <Text style={material.body1}>{item?.content}</Text>
               </View>
             </View>
-          </>
+            <View style={{position: 'absolute', bottom: 0}}>
+              <BannerAd
+                unitId={TestIds.BANNER}
+                size={BannerAdSize.ANCHORED_ADAPTIVE_BANNER}
+              />
+            </View>
+          </Fragment>
         </ViewShot>
         <View style={styles.bottomTab}>
           <View style={{flexDirection: 'row', gap: 6}}>
@@ -203,6 +222,7 @@ class Article extends Component {
       key={item?.id}
       style={this.swipedCardPosition.getLayout()}
       {...this.PanResponder.panHandlers}>
+      <View style={styles.container}></View>
       <View style={styles.mainContainer}>
         <View style={{flex: 2}}>
           <Image source={this.props.article[index].url} style={styles.image} />
@@ -268,6 +288,7 @@ class Article extends Component {
   );
   renderNextArticle = (item: any, index: number) => (
     <Animated.View key={item?.id}>
+      <View style={styles.container}></View>
       <View style={styles.mainContainer}>
         <View style={{flex: 2}}>
           <Image source={this.props.article[index].url} style={styles.image} />
@@ -348,7 +369,19 @@ class Article extends Component {
       .reverse();
   };
   render() {
-    return <View style={{flex: 1}}>{this.renderArticles()}</View>;
+    return (
+      <View>
+        <View style={{flex: 1}}>{this.renderArticles()}</View>
+        <Comments
+          visible={this.state.commentVisible}
+          onClose={() => this.setState({commentVisible: false})}
+        />
+        <ArticleOptions
+          visible={this.state.optionVisible}
+          onClose={() => this.setState({optionVisible: false})}
+        />
+      </View>
+    );
   }
 }
 Article.propTypes = {
@@ -356,23 +389,29 @@ Article.propTypes = {
 };
 
 export const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    position: 'absolute',
+    height: SCREEN_HEIGHT,
+    width: SCREEN_WIDTH,
+    backgroundColor: '#7c7c81',
+    // zIndex: 9,
+  },
   mainContainer: {
     flex: 1,
     position: 'absolute',
     height: SCREEN_HEIGHT,
     width: SCREEN_WIDTH,
-    backgroundColor: '#fff',
   },
   shotContainer: {
     flex: 1,
     position: 'relative',
     height: SCREEN_HEIGHT,
     width: SCREEN_WIDTH,
-    backgroundColor: '#fff',
   },
   iconTab: {
     position: 'relative',
-    top: -30,
+    top: -28,
     flexDirection: 'row',
     gap: 10,
     justifyContent: 'flex-end',
@@ -396,6 +435,14 @@ export const styles = StyleSheet.create({
     elevation: 20,
     shadowColor: '#52006A',
   },
+  currImage: {
+    flex: 1,
+    position: 'relative',
+    top: -6,
+    height: null,
+    width: null,
+    resizeMode: 'contain',
+  },
   image: {
     flex: 1,
     position: 'relative',
@@ -403,6 +450,7 @@ export const styles = StyleSheet.create({
     height: null,
     width: null,
     resizeMode: 'contain',
+    opacity: 0.5,
   },
   reporterImageBox: {
     backgroundColor: theme.colors.bar,

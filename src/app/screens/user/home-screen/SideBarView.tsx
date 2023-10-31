@@ -14,20 +14,32 @@ import i18next, {languageResources} from '../../../services/i18next';
 import {useTranslation} from 'react-i18next';
 import languagesList from '../../../services//languagesList.json';
 import {theme} from '../../../../config/theme';
-import {List} from 'react-native-paper';
-import {Card} from '../../../../../libs/ats-native-components/src';
+import {Divider, List} from 'react-native-paper';
+import {Card, IconButton} from '../../../../../libs/ats-native-components/src';
+import {material} from 'react-native-typography';
 
 const SideBarView = () => {
   const {t} = useTranslation();
-  const [visible, setvisible] = useState(false);
+  const [visibleLang, setvisibleLang] = useState(false);
   const changeLng = (lang: any) => {
     i18next.changeLanguage(lang);
-    setvisible(false);
+    setvisibleLang(false);
   };
-  const handleLanguageChange = () => setvisible(true);
+  const handleLanguageChange = () => setvisibleLang(true);
   const renderChangeLanguageModal = () => (
-    <Modal visible={visible} onRequestClose={() => setvisible(false)}>
-      <View style={{flex: 1, padding: 10, backgroundColor: theme.colors.bar}}>
+    <Modal
+      visible={visibleLang}
+      onRequestClose={() => setvisibleLang(false)}
+      animationType="slide"
+      presentationStyle="pageSheet">
+      <View
+        style={{
+          flex: 1,
+          paddingHorizontal: 20,
+          paddingVertical: 30,
+          gap: 40,
+        }}>
+        <Text style={material.title}>Select Language</Text>
         <FlatList
           data={Object.keys(languageResources)}
           renderItem={({item}) => (
@@ -38,7 +50,7 @@ const SideBarView = () => {
                 borderBottomWidth: 2,
                 borderColor: theme.colors.primary,
               }}>
-              <Text style={{color: theme.colors.ash}}>
+              <Text style={{color: '#000'}}>
                 {languagesList[item]?.nativeName}
               </Text>
             </TouchableOpacity>
@@ -53,40 +65,62 @@ const SideBarView = () => {
       title: `${t('change-language')}`,
       discription: `${t('selected-language')}`,
       onPress: handleLanguageChange,
+      icon: require('../../../assets/language.png'),
     },
     {
       id: '1',
       title: 'Select your Content Language',
       discription: `${t('selected-language')}`,
       onPress: null,
+      icon: require('../../../assets/contentLanguage.png'),
     },
     {
       id: '2',
       title: 'Your selected location',
       discription: 'Syamala Residancy, Manikonda (Change)',
       onPress: null,
+      icon: require('../../../assets/selectedLocation.png'),
     },
   ];
   const renderItem = ({item}: any) => {
     return (
-      <List.Item
-        title={item.title}
-        description={item.discription}
-        descriptionStyle={{color: theme.colors.primary}}
-        left={props => <List.Icon {...props} icon="folder" />}
-        onPress={item.onPress}
-      />
+      <>
+        <List.Item
+          title={item.title}
+          description={item.discription}
+          descriptionStyle={{color: theme.colors.primary}}
+          left={() => (
+            <View>
+              <Image source={item.icon} />
+            </View>
+          )}
+          right={() => (
+            <IconButton
+              icon={'chevron-right'}
+              size={18}
+              onPress={item.onPress}
+            />
+          )}
+          onPress={item.onPress}
+        />
+        <Divider />
+      </>
     );
   };
   return (
     <View>
-      <Card>
+      <View
+        style={{
+          backgroundColor: '#fff',
+          paddingTop: 8,
+          paddingHorizontal: 16,
+        }}>
         <FlatList
           data={OptionList}
           renderItem={item => renderItem(item)}
           keyExtractor={item => item?.id}
         />
-      </Card>
+      </View>
       {renderChangeLanguageModal()}
       <View style={styles.container}>
         <Text style={styles.heading}>{t('categories')}</Text>
@@ -114,6 +148,8 @@ const SideBarView = () => {
 export const styles = StyleSheet.create({
   container: {
     padding: 10,
+    paddingTop: 20,
+    gap: 20,
   },
   heading: {
     fontSize: 18,

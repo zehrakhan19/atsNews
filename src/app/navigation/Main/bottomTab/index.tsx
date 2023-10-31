@@ -14,6 +14,7 @@ import FeatherIcons from 'react-native-vector-icons/Feather';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
+import FontAwesome6 from 'react-native-vector-icons/FontAwesome6';
 import {useTranslation} from 'react-i18next';
 import ActionReaction from '../../../screens/user/action-reaction';
 // import ActionReaction from '../../../assets/actionReaction.svg';
@@ -27,8 +28,7 @@ function BottomTabs() {
       initialRouteName="home-screen"
       shifting
       activeColor={theme.colors.primary}
-      inactiveColor={theme.colors.accent}
-      barStyle={{backgroundColor: theme.colors.bar}}>
+      barStyle={{backgroundColor: '#fff'}}>
       <Tab.Screen
         name="home-screen"
         component={HomeScreen}

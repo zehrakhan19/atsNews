@@ -1,6 +1,6 @@
 import React from 'react';
-import { IconButton as AtsIconButton } from 'react-native-paper';
-import { IconSource } from 'react-native-paper/lib/typescript/components/Icon';
+import {IconButton as AtsIconButton} from 'react-native-paper';
+import {IconSource} from 'react-native-paper/lib/typescript/components/Icon';
 
 export interface IconButtonProps {
   icon: IconSource;
@@ -18,12 +18,12 @@ export function IconButton({
   icon,
   iconColor = '#ffffff',
   onPress = () => null,
-  containerColor = '#305CFA',
+  containerColor = '#000',
   size = 24,
   mode = 'contained',
   disabled,
   rippleColor,
-  noBorderRadius
+  noBorderRadius,
 }: IconButtonProps) {
   return (
     <AtsIconButton
@@ -39,8 +39,8 @@ export function IconButton({
       animated={false}
       style={{
         margin: 0,
-        ...(iconColor && { borderColor: iconColor }),
-        ...(noBorderRadius && { borderRadius: 0 })
+        ...(iconColor && {borderColor: iconColor}),
+        ...(noBorderRadius && {borderRadius: 0}),
       }}
     />
   );

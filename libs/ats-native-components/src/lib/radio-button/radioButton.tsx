@@ -1,23 +1,21 @@
-import React, { useState } from 'react';
-import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
+import React, {useState} from 'react';
+import {View, Text, TouchableOpacity, StyleSheet} from 'react-native';
 export interface RadioButtonProps {
   label?: string;
   selected?: boolean;
   onSelect?: () => void;
 }
 
-export function RadioButton({ label, selected, onSelect }: RadioButtonProps) {
+export function RadioButton({label, selected, onSelect}: RadioButtonProps) {
   return (
     <TouchableOpacity
       onPress={onSelect}
-      style={{ flexDirection: 'row', alignItems: 'center' }}
-    >
+      style={{flexDirection: 'row', alignItems: 'center'}}>
       <View
         style={[
           styles.container,
-          { borderColor: selected ? '#ffc000' : '#000' }
-        ]}
-      >
+          {borderColor: selected ? '#BE0808' : '#000'},
+        ]}>
         {selected && <View style={styles.radioButton} />}
       </View>
       <Text>{label}</Text>
@@ -32,13 +30,13 @@ const styles = StyleSheet.create({
     borderWidth: 2,
     alignItems: 'center',
     justifyContent: 'center',
-    marginRight: 10
+    marginRight: 10,
   },
   radioButton: {
     height: 12,
     width: 12,
     borderRadius: 6,
-    backgroundColor: '#ffc000'
-  }
+    backgroundColor: '#BE0808',
+  },
 });
 export default RadioButton;

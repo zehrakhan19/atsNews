@@ -1,4 +1,8 @@
 {
   "name": "atsNews",
-  "displayName": "atsNews"
+  "displayName": "atsNews",
+
+  "react-native-google-mobile-ads": {
+    "android_app_id": "ca-app-pub-6776917395508348~4639599533"
+  }
 }
