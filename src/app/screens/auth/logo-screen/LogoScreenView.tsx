@@ -5,7 +5,7 @@ import {View, Text, ScrollView} from 'react-native';
 
 function LogoScreenView({navigation}: any) {
   const navigate = () => {
-    navigation.navigate('Login with mobile number');
+    navigation.navigate('main');
   };
   setTimeout(() => {
     navigate();

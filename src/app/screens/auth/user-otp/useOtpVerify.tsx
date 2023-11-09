@@ -4,7 +4,7 @@
 // import {userLoginWithMobileNumber} from '../../../features/user/userSlice';
 import {useEffect, useState} from 'react';
 
-const useOtpVerify = ({navigation}) => {
+const useOtpVerify = ({navigation}: any) => {
   const initialTime = 25;
   const [timeRemaining, setTimeRemaining] = useState(initialTime);
   const [resend, setResend] = useState('');

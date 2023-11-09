@@ -5,7 +5,7 @@ import {useState} from 'react';
 // import {userMobileNumberEntered} from '../../../features/user/userSlice';
 // import {showApiResponse} from '../../../helpers/showApiResposne';
 
-const useLoginWithMobile = ({navigation}) => {
+const useLoginWithMobile = ({navigation}: any) => {
   const [mobileNumber, setMobileNumber] = useState('');
   const [sendOtpDisable, setSendOtpDisable] = useState(true);
 

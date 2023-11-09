@@ -28,19 +28,21 @@ function LoginWithMobileView({
   sendOtpDisable,
   mobileNumber,
   sendOTP,
-  // checkMobileNumberValidity,
-  // isLoadingLogin,
-}) {
+}: // checkMobileNumberValidity,
+// isLoadingLogin,
+any) {
   return (
-    // <ScrollView style={{backgroundColor: '#fff'}}>
     <View style={{backgroundColor: '#fff'}}>
       <KeyboardAvoidingView
         behavior={Platform.OS === 'ios' ? 'padding' : 'height'}>
         <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
           <View>
-            <View style={styles.skipButton}>
+            <View style={styles.skipButtonContainer}>
               <TouchableOpacity
-                onPress={() => navigation.navigate('home-screen')}>
+                style={styles.skipButton}
+                onPress={() => {
+                  navigation.navigate('main');
+                }}>
                 <Text
                   style={[
                     iOSUIKit.subheadEmphasizedObject,
@@ -103,7 +105,9 @@ function LoginWithMobileView({
                 <InputText
                   placeholder="Enter Mobile Number"
                   value={mobileNumber}
-                  onChangeText={text => checkMobileNumberValidity(text)}
+                  onChangeText={
+                    text => null //checkMobileNumberValidity(text)
+                  }
                   keyboardType="number-pad"
                   maxLength={10}
                 />
@@ -137,15 +141,19 @@ function LoginWithMobileView({
         </View>
       </KeyboardAvoidingView>
     </View>
-    // </ScrollView>
   );
 }
 
 export const styles = StyleSheet.create({
+  skipButtonContainer: {
+    position: 'relative',
+  },
   skipButton: {
-    alignItems: 'flex-end',
-    paddingTop: 20,
-    paddingHorizontal: 20,
+    padding: 30,
+    position: 'absolute',
+    top: 0,
+    right: 0,
+    zIndex: 9,
   },
   imageContainer: {
     alignItems: 'center',
@@ -154,6 +162,7 @@ export const styles = StyleSheet.create({
   inputContainer: {
     gap: 8,
     padding: 10,
+    paddingTop: 50,
     backgroundColor: theme.colors.primary,
   },
   bottomText: {alignSelf: 'center', color: '#fff', paddingVertical: 15},

@@ -15,7 +15,6 @@ import {useTranslation} from 'react-i18next';
 import {material} from 'react-native-typography';
 import {
   Appbar,
-  Card,
   IconButton,
 } from '../../../../../libs/ats-native-components/src';
 import FeatherIcon from 'react-native-vector-icons/Feather';
@@ -202,7 +201,10 @@ const TopNavigation = ({index, setIndex}) => {
       ) : (
         <TouchableOpacity
           style={styles.left}
-          onPress={() => setIndex(index === 0 ? 1 : 0)}>
+          onPress={() => {
+            setIndex(index === 0 ? 1 : 0);
+            console.log(1);
+          }}>
           <ArrowIcon name="arrow-left" size={15} color={theme.colors.primary} />
           <Text style={{...styles.text, color: '#000'}}>{t('discover')}</Text>
         </TouchableOpacity>

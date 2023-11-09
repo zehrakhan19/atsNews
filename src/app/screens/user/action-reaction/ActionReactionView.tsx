@@ -62,8 +62,8 @@ const ActionReactionView = ({navigation}: any) => {
         tabBarGap: 0,
         tabBarScrollEnabled: true,
         tabBarItemStyle: {width: Dimensions.get('window').width / 2},
-        tabBarLabelStyle: {color: theme.colors.accent},
-        tabBarStyle: {backgroundColor: theme.colors.bar},
+        tabBarLabelStyle: {color: '#000'},
+        tabBarStyle: {backgroundColor: '#fff'},
         tabBarIndicatorStyle: {backgroundColor: theme.colors.primary},
       }}>
       <Tab.Screen name="Action">{() => <DataView data={action} />}</Tab.Screen>

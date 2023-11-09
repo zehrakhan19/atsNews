@@ -13,4 +13,23 @@ export const styles = StyleSheet.create({
     justifyContent: 'center',
     padding: 10,
   },
+  borderStyleBase: {
+    width: 30,
+    height: 45,
+  },
+
+  borderStyleHighLighted: {
+    borderColor: '#03DAC6',
+  },
+
+  underlineStyleBase: {
+    width: 30,
+    height: 45,
+    borderWidth: 0,
+    borderBottomWidth: 1,
+  },
+
+  underlineStyleHighLighted: {
+    borderColor: '#03DAC6',
+  },
 });
