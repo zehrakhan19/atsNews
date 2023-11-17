@@ -1,19 +1,20 @@
 /* eslint-disable react-native/no-inline-styles */
 import React from 'react';
-import {View, Text, ScrollView, TouchableOpacity, Image} from 'react-native';
+import {View, Text, TouchableOpacity, Image} from 'react-native';
 
 import {styles} from './otpverify.styles';
 import {Button} from '../../../../../libs/ats-native-components/src';
 import OTPInputView from '@twotalltotems/react-native-otp-input';
 import {theme} from '../../../../config/theme';
 import {iOSUIKit, material, systemWeights} from 'react-native-typography';
+import OtpInputs from 'react-native-otp-inputs';
 
 function OTPVerifyView({
-  NavigateToChangeNumber,
+  // NavigateToChangeNumber,
   // isLoadingLogin,
   VerifyOtp,
   resend,
-}) {
+}: any) {
   return (
     <>
       <View>
@@ -44,6 +45,11 @@ function OTPVerifyView({
             </Text>
           </View>
           <View>
+            <OtpInputs
+              handleChange={code => console.log(code)}
+              numberOfInputs={6}
+              autofillFromClipboard
+            />
             {/* <OTPInputView
               style={{width: '100%', height: 54}}
               pinCount={4}

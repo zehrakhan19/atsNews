@@ -3,15 +3,15 @@ import * as React from 'react';
 import {useWindowDimensions, View} from 'react-native';
 import {styles} from './HomeScreen.styles';
 import {TabView, SceneMap} from 'react-native-tab-view';
-import SideBarView from './SideBarView';
+import SideBarView from './SideBar/index';
 import NewsScreenView from './NewsScreenView';
 import TopNavigation from './TopNavigation';
 
-const renderScene = SceneMap({
-  sideBar: SideBarView,
-  newsScreen: NewsScreenView,
-});
-export default function HomeScreenView() {
+export default function HomeScreenView({navigation}: any) {
+  const renderScene = SceneMap({
+    sideBar: () => <SideBarView navigation={navigation} />,
+    newsScreen: NewsScreenView,
+  });
   const layout = useWindowDimensions();
 
   const [index, setIndex] = React.useState(1);
@@ -27,7 +27,13 @@ export default function HomeScreenView() {
         renderScene={renderScene}
         onIndexChange={setIndex}
         initialLayout={{width: layout.width}}
-        renderTabBar={() => <TopNavigation index={index} setIndex={setIndex} />}
+        renderTabBar={() => (
+          <TopNavigation
+            index={index}
+            setIndex={setIndex}
+            // navigation={navigation}
+          />
+        )}
       />
     </View>
   );

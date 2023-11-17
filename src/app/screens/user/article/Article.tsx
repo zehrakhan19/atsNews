@@ -13,8 +13,6 @@ import {
 } from 'react-native';
 import PropTypes from 'prop-types';
 import {material} from 'react-native-typography';
-import Share from 'react-native-share';
-import ViewShot from 'react-native-view-shot';
 import Icon from 'react-native-vector-icons/AntDesign';
 import CommentIcon from 'react-native-vector-icons/MaterialCommunityIcons';
 import ShareIcon from 'react-native-vector-icons/Feather';
@@ -25,6 +23,9 @@ import ArticleOptions from '../article-options/ArticleOptions';
 import Comments from '../comments/Comments';
 import InterstitialAds from '../interstitial-ads';
 import {BannerAd, TestIds, BannerAdSize} from 'react-native-google-mobile-ads';
+import ViewShot from 'react-native-view-shot';
+import Share from 'react-native-share';
+import RNFS from 'react-native-fs';
 
 const SCREEN_HEIGHT = Dimensions.get('window').height;
 const SCREEN_WIDTH = Dimensions.get('window').width;
@@ -48,18 +49,30 @@ class Article extends Component {
       optionVisible: false,
     };
   }
-  myCustomShare = async (message: any) => {
-    const shareOptions = {
-      // url: uri,
-      message: message,
-    };
-    try {
-      const ShareResponse = await Share.open(shareOptions);
-    } catch (err) {
-      console.log('Error => ', err);
-    }
+  captureAndShareScreenshot = (headline: string) => {
+    // if (!this.ref || !this.ref.current) {
+    //   return;
+    // }
+    console.log(headline, 'headline');
+    this.ref.current.capture().then((uri: any) => {
+      RNFS.readFile(uri, 'base64').then(res => {
+        let urlString = 'data:image/jpeg;base64,' + res;
+        let options = {
+          title: headline,
+          message: 'Share Message',
+          url: urlString,
+          type: 'image/jpeg',
+        };
+        Share.open(options)
+          .then(res => {
+            console.log(res);
+          })
+          .catch(err => {
+            err && console.log(err);
+          });
+      });
+    });
   };
-
   componentWillMount() {
     this.PanResponder = PanResponder.create({
       onStartShouldSetPanResponder: (e, gestureState) => true,
@@ -157,13 +170,8 @@ class Article extends Component {
                     color={'gray'}
                     size={20}
                     onPress={() => {
-                      this.ref.current
-                        .capture()
-                        .then((uri: any) => {
-                          console.log('do something with ', uri);
-                        })
-                        .catch(({err}: any) => console.log(err));
-                      this.myCustomShare(item?.heading);
+                      console.log('share_________________________');
+                      this.captureAndShareScreenshot(item?.heading);
                     }}
                   />
                 </View>
@@ -222,7 +230,7 @@ class Article extends Component {
       key={item?.id}
       style={this.swipedCardPosition.getLayout()}
       {...this.PanResponder.panHandlers}>
-      <View style={styles.container}></View>
+      <View style={styles.container} />
       <View style={styles.mainContainer}>
         <View style={{flex: 2}}>
           <Image source={this.props.article[index].url} style={styles.image} />
@@ -243,9 +251,7 @@ class Article extends Component {
               />
             </View>
             <View style={[styles.iconContainer, styles.elevation]}>
-              <TouchableOpacity>
-                <ShareIcon name="share-2" color={'gray'} size={20} />
-              </TouchableOpacity>
+              <ShareIcon name="share-2" color={'gray'} size={20} />
             </View>
             <View style={[styles.iconContainer, styles.elevation]}>
               <ReportIcon name="alert-triangle" color={'gray'} size={20} />
@@ -288,7 +294,7 @@ class Article extends Component {
   );
   renderNextArticle = (item: any, index: number) => (
     <Animated.View key={item?.id}>
-      <View style={styles.container}></View>
+      <View style={styles.container} />
       <View style={styles.mainContainer}>
         <View style={{flex: 2}}>
           <Image source={this.props.article[index].url} style={styles.image} />
@@ -309,9 +315,7 @@ class Article extends Component {
               />
             </View>
             <View style={[styles.iconContainer, styles.elevation]}>
-              <TouchableOpacity>
-                <ShareIcon name="share-2" color={'gray'} size={20} />
-              </TouchableOpacity>
+              <ShareIcon name="share-2" color={'gray'} size={20} />
             </View>
             <View style={[styles.iconContainer, styles.elevation]}>
               <ReportIcon name="alert-triangle" color={'gray'} size={20} />
@@ -395,7 +399,6 @@ export const styles = StyleSheet.create({
     height: SCREEN_HEIGHT,
     width: SCREEN_WIDTH,
     backgroundColor: '#7c7c81',
-    // zIndex: 9,
   },
   mainContainer: {
     flex: 1,

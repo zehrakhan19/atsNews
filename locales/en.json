@@ -1,5 +1,11 @@
 {
   "change-language": "Select your App Language",
+  "change-content-language": "Select your Content Language",
+  "selected-location": "Your selected location",
+  "guest": "Guest",
+  "reporter": "Reporter",
+  "viral": "Viral",
+  "contact": "Contact",
   "selected-language": "English",
   "welcome": "Welcome",
   "discover": "Discover",

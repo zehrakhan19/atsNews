@@ -13,7 +13,7 @@ export default function RootNav() {
   //   dispatch(userLogout());
   // });
 
-  if (true) {
+  if (false) {
     return <MainNav />;
   }
 

@@ -8,6 +8,7 @@ import ReporterDashboard from '../../../screens/user/reporter-dashboard';
 import Staff from '../../../screens/user/staff';
 import Categories from '../../../screens/user/categories';
 import ViewNews from '../../../screens/user/view-news';
+import {Text, Image, View} from 'react-native';
 
 import AntDesignIcon from 'react-native-vector-icons/AntDesign';
 import FeatherIcons from 'react-native-vector-icons/Feather';
@@ -17,7 +18,6 @@ import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import FontAwesome6 from 'react-native-vector-icons/FontAwesome6';
 import {useTranslation} from 'react-i18next';
 import ActionReaction from '../../../screens/user/action-reaction';
-// import ActionReaction from '../../../assets/actionReaction.svg';
 
 function BottomTabs() {
   const Tab = createMaterialBottomTabNavigator();
@@ -54,9 +54,16 @@ function BottomTabs() {
         component={ActionReaction}
         options={{
           tabBarLabel: `${t('action-reaction')}`,
-          tabBarIcon: ({color}) => (
-            // <ActionReaction size={20} color={'#000'} />
-            <AntDesignIcon name={'swap'} color={color} size={26} />
+          tabBarIcon: ({focused}) => (
+            <Image
+              source={require('../../../assets/actionReaction.png')}
+              resizeMode="contain"
+              style={{
+                width: 30,
+                height: 30,
+                tintColor: focused ? theme.colors.primary : '#000',
+              }}
+            />
           ),
         }}
       />
