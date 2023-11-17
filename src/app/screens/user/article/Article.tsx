@@ -165,11 +165,6 @@ class Article extends Component {
                   />
                 </View>
                 <View style={[styles.iconContainer, styles.elevation]}>
-                  {/* <TouchableOpacity
-                    onPress={() => {
-                      console.log('share_________________________');
-                      this.captureAndShareScreenshot(item?.heading);
-                    }}> */}
                   <ShareIcon
                     name="share-2"
                     color={'gray'}
@@ -179,7 +174,6 @@ class Article extends Component {
                       this.captureAndShareScreenshot(item?.heading);
                     }}
                   />
-                  {/* </TouchableOpacity> */}
                 </View>
                 <View style={[styles.iconContainer, styles.elevation]}>
                   <ReportIcon
@@ -405,7 +399,6 @@ export const styles = StyleSheet.create({
     height: SCREEN_HEIGHT,
     width: SCREEN_WIDTH,
     backgroundColor: '#7c7c81',
-    // zIndex: 9,
   },
   mainContainer: {
     flex: 1,

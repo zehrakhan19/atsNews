@@ -5,6 +5,8 @@ import React from 'react';
 import {Appbar} from '../../../../../libs/ats-native-components/src';
 import Article from '../article/Article';
 import {Divider} from 'react-native-paper';
+// import Article from '../styled-article/article';
+import {Text, View} from 'react-native';
 const NewsScreenView = ({navigation}: any) => {
   const ARTICLES = [
     {
@@ -80,14 +82,55 @@ const NewsScreenView = ({navigation}: any) => {
       `,
     },
   ];
-
+  const NewsOne = {
+    headingFirst: `వినోదం`,
+    headingSecond: `ఒకేసారి మూడు రకాల సమస్యలు చుట్టుముట్టాయి`,
+    headingThird: `సమంత`,
+    shortNews: `ఒకేసారి మూడు రకాల సమస్యలు చుట్టుముట్టాయి.. ఎంతో బాధపడ్డాను '' అని నటి సమంత అన్నారు. స్టార్‌ హీరోయిన్‌ సమంత ప్రస్తుతం సినిమాలకు విరామం ప్రకటించి పూర్తి సమయాన్ని ఆరోగ్య సంరక్షణకు కేటాయించారు. తాజాగా ఆమె ఓ ఆంగ్ల మీడియా సంస్థతో మాట్లాడుతూ ... తన విడాకులు, వరుస ఫ్లాప్‌లు, ఆరోగ్య సమస్యలు అన్నీ ఒకేసారి చుట్టుముట్టడంతో తాను ఎంతో కుంగిపోయినట్లు తెలిపారు.`,
+    articleImage: require('../../../assets/articleStyle1.png'),
+    like: '230',
+    dislike: '10',
+    comment: '43',
+  };
+  const NewsTwo = {
+    headingFirst: `రాజకీయం.`,
+    headingSecond: `గజ్వేల్, కామారెడ్డిలో సీఎం కేసీఆర్`,
+    headingThird: `నామినేషన్`,
+    shortNews: `తెలంగాణ సీఎం కేసీఆర్ గజ్వేల్, కామారెడ్డి నియోజక వర్గాల్లో నామినేషన్ దాఖలు చేశారు. అటు, మంత్రి కేటీఆర్ సిరిసిల్లలో, మంత్రి హరీష్ రావు సిద్ధిపేటలో నామినేషన్ వేశారు.`,
+    articleImage: require('../../../assets/articleStyle2.png'),
+    like: '230',
+    dislike: '10',
+    comment: '43',
+  };
+  const NewsThree = {
+    headingFirst: `రాజకీయం.`,
+    headingSecond: `కాంగ్రెసులోకి`,
+    headingThird: `తీన్మార్ మల్లన్న`,
+    headerForth: `ఠాక్రే సమక్షంలో చేరిక ఈసారి పోటీకి దూరమేనా ?`,
+    shortNews: `తెలంగాణ సీఎం కేసీఆర్ గజ్వేల్, కామారెడ్డి నియోజక వర్గాల్లో నామినేషన్ దాఖలు చేశారు. అటు, మంత్రి కేటీఆర్ సిరిసిల్లలో, మంత్రి హరీష్ రావు సిద్ధిపేటలో నామినేషన్ వేశారు.`,
+    articleImage: require('../../../assets/articleStyle3.png'),
+    like: '230',
+    dislike: '10',
+    comment: '43',
+  };
   const renderAppBar = () => {
     return (
       <Appbar title={'Home screen'} backAction={() => navigation.goBack()} />
     );
   };
   const renderHomeScreenView = () => {
-    return <Article article={ARTICLES} />;
+    return (
+      <>
+        {/* ______________IMPORT FROM ../styled-article/article________________ */}
+
+        {/* <Article style={1} data={NewsOne} /> */}
+        {/* <Article style={2} data={NewsTwo} /> */}
+        {/* <Article style={3} data={NewsThree} /> */}
+
+        {/* ______________IMPORT FROM ../article/Article________________ */}
+        <Article article={ARTICLES} />
+      </>
+    );
   };
   return (
     <>
