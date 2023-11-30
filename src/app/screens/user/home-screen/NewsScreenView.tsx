@@ -3,9 +3,9 @@
 
 import React from 'react';
 import {Appbar} from '../../../../../libs/ats-native-components/src';
-import Article from '../article/Article';
+// import Article from '../article/Article';
 import {Divider} from 'react-native-paper';
-// import Article from '../styled-article/article';
+import Article from '../styled-article/article';
 import {Text, View} from 'react-native';
 const NewsScreenView = ({navigation}: any) => {
   const ARTICLES = [
@@ -123,12 +123,12 @@ const NewsScreenView = ({navigation}: any) => {
       <>
         {/* ______________IMPORT FROM ../styled-article/article________________ */}
 
-        {/* <Article style={1} data={NewsOne} /> */}
+        <Article style={1} data={NewsOne} />
         {/* <Article style={2} data={NewsTwo} /> */}
         {/* <Article style={3} data={NewsThree} /> */}
 
         {/* ______________IMPORT FROM ../article/Article________________ */}
-        <Article article={ARTICLES} />
+        {/* <Article article={ARTICLES} /> */}
       </>
     );
   };
