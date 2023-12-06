@@ -1,13 +1,9 @@
-/* eslint-disable react/no-unstable-nested-components */
-/* eslint-disable @typescript-eslint/no-unused-vars */
-
-import React from 'react';
-import {Appbar} from '../../../../../libs/ats-native-components/src';
-// import Article from '../article/Article';
+import * as React from 'react';
 import {Divider} from 'react-native-paper';
-import Article from '../styled-article/article';
-import {Text, View} from 'react-native';
-const NewsScreenView = ({navigation}: any) => {
+import CarouselArticle from '../article/CarouselArticle';
+// import Article from '../article/Article';
+
+export default function NewsScreen() {
   const ARTICLES = [
     {
       id: 0,
@@ -82,7 +78,7 @@ const NewsScreenView = ({navigation}: any) => {
       `,
     },
   ];
-  const NewsOne = {
+  const CardOne = {
     headingFirst: `వినోదం`,
     headingSecond: `ఒకేసారి మూడు రకాల సమస్యలు చుట్టుముట్టాయి`,
     headingThird: `సమంత`,
@@ -91,8 +87,9 @@ const NewsScreenView = ({navigation}: any) => {
     like: '230',
     dislike: '10',
     comment: '43',
+    style: 1,
   };
-  const NewsTwo = {
+  const CardTwo = {
     headingFirst: `రాజకీయం.`,
     headingSecond: `గజ్వేల్, కామారెడ్డిలో సీఎం కేసీఆర్`,
     headingThird: `నామినేషన్`,
@@ -101,8 +98,9 @@ const NewsScreenView = ({navigation}: any) => {
     like: '230',
     dislike: '10',
     comment: '43',
+    style: 2,
   };
-  const NewsThree = {
+  const CardThree = {
     headingFirst: `రాజకీయం.`,
     headingSecond: `కాంగ్రెసులోకి`,
     headingThird: `తీన్మార్ మల్లన్న`,
@@ -112,33 +110,81 @@ const NewsScreenView = ({navigation}: any) => {
     like: '230',
     dislike: '10',
     comment: '43',
+    style: 3,
   };
-  const renderAppBar = () => {
-    return (
-      <Appbar title={'Home screen'} backAction={() => navigation.goBack()} />
-    );
+  const CardFour = {
+    headingFirst: `రాజకీయం.`,
+    headingSecond: `గజ్వేల్, కామారెడ్డిలో సీఎం కేసీఆర్`,
+    headingThird: `నామినేషన్`,
+    shortNews: `తెలంగాణ సీఎం కేసీఆర్ గజ్వేల్, కామారెడ్డి నియోజక వర్గాల్లో నామినేషన్ దాఖలు చేశారు. అటు, మంత్రి కేటీఆర్ సిరిసిల్లలో, మంత్రి హరీష్ రావు సిద్ధిపేటలో నామినేషన్ వేశారు.`,
+    shortNews2: `“తెలంగాణ సీఎం కేసీఆర్ గజ్వేల్, కామారెడ్డి నియోజక వర్గాల్లో నామినేషన్ దాఖలు చేశారు. “`,
+    articleImage: require('../../../assets/articleStyle2.png'),
+    articleImage2: require(''),
+    like: '230',
+    dislike: '10',
+    comment: '43',
+    style: 2,
   };
-  const renderHomeScreenView = () => {
-    return (
-      <>
-        {/* ______________IMPORT FROM ../styled-article/article________________ */}
+  const CardFive = {
+    headingFirst: `రాజకీయం.`,
+    headingSecond: `కేంద్రానికి వినతిలోనూ జాప్యమే !`,
+    points: [
+      `ఇంకా సిద్ధం కాని మెమోరాండం`,
+      `ప్రకటించిందే తక్కువ మండలాలు`,
+      `కరువు సహాయ చర్యలకు నిధులడగలేని స్థితి`,
+      `కరువు సహాయ నిధులడగలేని`,
+    ],
+    shortNews: `యావత్‌ రాష్ట్రాన్నీ దుర్భిక్షం పీడిస్తున్న సమయాన, కరువు మండలాల గుర్తింపే లోపభూయిష్టంకాగా, ప్రకటించిన మేరకైనా కేంద్రాన్ని సకాలంలో నిధులడిగే విషయంలో రాష్ట్ర ప్రభుత్వం తాత్సారం చేస్తోంది. కేంద్ర కరువు మాన్యువల్‌ ప్రకారం కరువును ప్రకటిస్తూ గెజిట్‌ విడుదల చేసిన వారంలో కేంద్రాన్ని సహాయం కోరుతూ రాష్ట్ర సర్కారు సమగ్ర విజ్ఞాపన పత్రం సమర్పించాలి.`,
+    articleImage: require('../../../assets/articleStyle3.png'),
+    like: '230',
+    dislike: '10',
+    comment: '43',
+    style: 2,
+  };
+  const CardSix = {
+    headingFirst: `రాజకీయం.`,
+    headingSecond: `కాంగ్రెసులోకి`,
+    headingThird: `తీన్మార్ మల్లన్న`,
+    headerForth: `ఠాక్రే సమక్షంలో చేరిక ఈసారి పోటీకి దూరమేనా ?`,
+    shortNews: `తెలంగాణ సీఎం కేసీఆర్ గజ్వేల్, కామారెడ్డి నియోజక వర్గాల్లో నామినేషన్ దాఖలు చేశారు. అటు, మంత్రి కేటీఆర్ సిరిసిల్లలో, మంత్రి హరీష్ రావు సిద్ధిపేటలో నామినేషన్ వేశారు.`,
+    articleImage: require('../../../assets/articleStyle3.png'),
+    like: '230',
+    dislike: '10',
+    comment: '43',
+    style: 2,
+  };
+  const CardSeven = {
+    headingFirst: `రాజకీయం.`,
+    headingSecond: `కాంగ్రెసులోకి`,
+    headingThird: `తీన్మార్ మల్లన్న`,
+    headerForth: `ఠాక్రే సమక్షంలో చేరిక ఈసారి పోటీకి దూరమేనా ?`,
+    shortNews: `తెలంగాణ సీఎం కేసీఆర్ గజ్వేల్, కామారెడ్డి నియోజక వర్గాల్లో నామినేషన్ దాఖలు చేశారు. అటు, మంత్రి కేటీఆర్ సిరిసిల్లలో, మంత్రి హరీష్ రావు సిద్ధిపేటలో నామినేషన్ వేశారు.`,
+    articleImage: require('../../../assets/articleStyle3.png'),
+    like: '230',
+    dislike: '10',
+    comment: '43',
+    style: 2,
+  };
+  const NewsArray = [
+    {article: {...CardOne}},
+    {article: {...CardTwo}},
+    {article: {...CardThree}},
+    {article: {...CardFour}},
+    {article: {...CardFive}},
+    {article: {...CardSix}},
+    {article: {...CardSeven}},
+  ];
 
-        <Article style={1} data={NewsOne} />
-        {/* <Article style={2} data={NewsTwo} /> */}
-        {/* <Article style={3} data={NewsThree} /> */}
-
-        {/* ______________IMPORT FROM ../article/Article________________ */}
-        {/* <Article article={ARTICLES} /> */}
-      </>
-    );
-  };
+  const RenderHomeScreenView = () => (
+    <>
+      <CarouselArticle data={NewsArray} />
+      {/* <Article article={ARTICLES} /> */}
+    </>
+  );
   return (
     <>
-      {/* {renderAppBar()} */}
-      {renderHomeScreenView()}
+      <RenderHomeScreenView />
       <Divider />
     </>
   );
-};
-
-export default NewsScreenView;
+}
