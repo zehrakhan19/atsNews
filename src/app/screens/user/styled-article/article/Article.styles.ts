@@ -38,17 +38,17 @@ export const styles = StyleSheet.create({
   },
   headingFirst: {
     color: 'grey',
-    fontFamily: 'AnekTelugu_Condensed-ExtraBold',
+    fontFamily: 'AnekTelugu-ExtraBold',
   },
   headingSecond: {
     color: 'brown',
     textAlign: 'center',
-    fontFamily: 'AnekTelugu_Medium',
+    fontFamily: 'AnekTelugu-Medium',
   },
   headingThird: {
     color: 'red',
     textAlign: 'center',
-    fontFamily: 'AnekTelugu_Regular',
+    fontFamily: 'AnekTelugu-Regular',
   },
   shortNewsTwoSection: {
     position: 'absolute',
@@ -70,11 +70,11 @@ export const styles = StyleSheet.create({
     color: '#5B5757',
     lineHeight: 25,
     letterSpacing: 1,
-    fontFamily: 'AnekTelugu_Light',
+    fontFamily: 'AnekTelugu-Light',
   },
   shortNews2: {
     color: '#5B5757',
-    fontFamily: 'AnekTelugu_Light',
+    fontFamily: 'AnekTelugu-Light',
   },
   points: {
     color: '#305CFA',
