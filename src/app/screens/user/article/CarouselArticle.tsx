@@ -1,49 +1,80 @@
 import React, {useState, useRef} from 'react';
-import {Text, View, SafeAreaView, Dimensions} from 'react-native';
+import {Text, View, Dimensions, Animated, StyleSheet} from 'react-native';
 import Carousel from 'react-native-snap-carousel';
 import Article from '../styled-article/article';
 
-const CarouselArticle = ({data}: any) => {
-  const [activeIndex, setActiveIndex] = useState(0);
+const CarouselArticle = ({data, setData}: any) => {
+  const [activeSlide, setActiveSlide] = useState(0);
   const SCREEN_HEIGHT = Dimensions.get('window').height;
-
-  const carouselRef = useRef(null);
+  const animatedValue = useRef(new Animated.Value(0)).current;
 
   const renderItem = ({item, index}) => {
+    const translateY = animatedValue.interpolate({
+      inputRange: [-1, 0, 1],
+      outputRange: [50, 0, -50],
+    });
+
+    const rotateX = animatedValue.interpolate({
+      inputRange: [-1, 0, 1],
+      outputRange: ['45deg', '0deg', '-45deg'],
+    });
     return (
       <View key={index}>
-        <Article style={item.article.style} data={item.article} />
+        <Animated.View
+          style={[
+            styles.slide,
+            {
+              transform: [{translateY}, {rotateX}],
+            },
+          ]}>
+          <Article style={item?.style} data={item} setData={setData} />
+        </Animated.View>
       </View>
     );
   };
 
-  const onSnapToItem = index => {
-    setActiveIndex(index);
+  const handleSnapToItem = index => {
+    setActiveSlide(index);
+  };
+
+  const handleScroll = event => {
+    Animated.event([{nativeEvent: {contentOffset: {y: animatedValue}}}], {
+      useNativeDriver: false,
+    })(event);
   };
 
   return (
-    <SafeAreaView>
-      <View
-        style={{
-          alignItems: 'center',
-          justifyContent: 'center',
-        }}>
-        <Carousel
-          layout={'default'}
-          scrollEnabled
-          ref={carouselRef}
-          data={data}
-          sliderWidth={387}
-          itemWidth={387}
-          // sliderHeight={SCREEN_HEIGHT - 115}
-          // itemHeight={SCREEN_HEIGHT - 110}
-          // vertical
-          renderItem={renderItem}
-          onSnapToItem={onSnapToItem}
-        />
-      </View>
-    </SafeAreaView>
+    <View style={styles.container}>
+      <Carousel
+        layout={'stack'}
+        scrollEnabled
+        // ref={carouselRef}
+        data={data}
+        renderItem={renderItem}
+        onSnapToItem={handleSnapToItem}
+        sliderHeight={SCREEN_HEIGHT - 50}
+        itemHeight={SCREEN_HEIGHT - 50}
+        vertical
+        // onScroll={handleScroll}
+      />
+    </View>
   );
 };
-
+const styles = StyleSheet.create({
+  container: {
+    // flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  slide: {
+    // flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: 'lightblue',
+  },
+  title: {
+    fontSize: 20,
+    fontWeight: 'bold',
+  },
+});
 export default CarouselArticle;
