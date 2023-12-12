@@ -4,13 +4,13 @@ import {useWindowDimensions, View} from 'react-native';
 import {styles} from './HomeScreen.styles';
 import {TabView, SceneMap} from 'react-native-tab-view';
 import SideBarView from './SideBar/index';
-import NewsScreenView from './NewsScreenView';
+import NewsScreen from './NewsScreen';
 import TopNavigation from './TopNavigation';
 
 export default function HomeScreenView({navigation}: any) {
   const renderScene = SceneMap({
     sideBar: () => <SideBarView navigation={navigation} />,
-    newsScreen: NewsScreenView,
+    newsScreen: <NewsScreen />,
   });
   const layout = useWindowDimensions();
 

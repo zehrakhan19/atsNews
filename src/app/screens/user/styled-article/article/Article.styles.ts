@@ -6,9 +6,9 @@ const SCREEN_WIDTH = Dimensions.get('window').width;
 
 export const styles = StyleSheet.create({
   articleContainer: {
-    flex: 1,
     backgroundColor: '#fff',
-    height: SCREEN_HEIGHT,
+    height: SCREEN_HEIGHT - 135,
+    overflow: 'hidden',
   },
   tabContainer: {
     backgroundColor: '#EC644B',
