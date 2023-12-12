@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unstable-nested-components */
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import * as React from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
@@ -21,19 +22,14 @@ export default function Guest({navigation}: any) {
         initialRouteName="Logo Screen"
         screenOptions={COMMON_STACK_OPTIONS}>
         <Stack.Screen
-          options={{headerShown: false}}
-          name="main"
-          component={BottomTabs}
-        />
-        <Stack.Screen
           name="Logo Screen"
           options={{headerShown: false}}
           component={LogoScreen}
         />
         <Stack.Screen
           options={{headerShown: false}}
-          name="home-screen"
-          component={HomeScreen}
+          name="main"
+          component={BottomTabs}
         />
         <Stack.Screen
           name="Login with mobile number"

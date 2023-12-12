@@ -1,6 +1,6 @@
 /* eslint-disable react-native/no-inline-styles */
 import * as React from 'react';
-import {useWindowDimensions, View} from 'react-native';
+import {useWindowDimensions, View, BackHandler} from 'react-native';
 import {styles} from './HomeScreen.styles';
 import {TabView, SceneMap} from 'react-native-tab-view';
 import SideBarView from './SideBar/index';
@@ -10,7 +10,7 @@ import TopNavigation from './TopNavigation';
 export default function HomeScreenView({navigation}: any) {
   const renderScene = SceneMap({
     sideBar: () => <SideBarView navigation={navigation} />,
-    newsScreen: <NewsScreen />,
+    newsScreen: () => <NewsScreen navigation={navigation} />,
   });
   const layout = useWindowDimensions();
 
@@ -19,6 +19,19 @@ export default function HomeScreenView({navigation}: any) {
     {key: 'sideBar', title: 'Discover'},
     {key: 'newsScreen', title: 'News'},
   ]);
+  React.useEffect(() => {
+    const backAction = () => {
+      if (navigation.goBack) {
+        BackHandler.exitApp();
+        return true;
+      }
+    };
+    const backHandler = BackHandler.addEventListener(
+      'hardwareBackPress',
+      backAction,
+    );
+    return () => backHandler.remove();
+  }, [navigation]);
 
   return (
     <View style={styles.container}>

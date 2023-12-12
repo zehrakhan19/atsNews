@@ -22,7 +22,7 @@ import AntDesignIcon from 'react-native-vector-icons/AntDesign';
 import MaterialCommunityIcon from 'react-native-vector-icons/MaterialCommunityIcons';
 import {Divider, List} from 'react-native-paper';
 
-const TopNavigation = ({index, setIndex}) => {
+const TopNavigation = ({index, setIndex}: any) => {
   const {t} = useTranslation();
   const [visibleSetting, setvisibleSetting] = useState(false);
   const [notification, setNotification] = useState(true);

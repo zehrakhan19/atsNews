@@ -1,5 +1,5 @@
 /* eslint-disable react-native/no-inline-styles */
-import React from 'react';
+import React, {useEffect} from 'react';
 import {Image} from 'react-native';
 import {View, Text, ScrollView} from 'react-native';
 
@@ -7,9 +7,14 @@ function LogoScreenView({navigation}: any) {
   const navigate = () => {
     navigation.navigate('main');
   };
-  setTimeout(() => {
-    navigate();
-  }, 3000);
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      navigate();
+    }, 2000);
+
+    return () => clearTimeout(timeout);
+  }, [navigation]);
+
   return (
     <>
       <ScrollView>
